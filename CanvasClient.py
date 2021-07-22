@@ -2,5 +2,9 @@
 class CanvasClient:
 
     def __init__(self):
-        self.college_pre_url = None
+        self.install_url = None
         self.token = None
+        self.client_secret = None
+        self.client_id = None
+        self.state = None
+        self.redirect_uri = None
