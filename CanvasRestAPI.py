@@ -113,6 +113,14 @@ class CanvasAccountNotifications(CanvasClient):
 
         pprint(request)
 
+    def update_global_notification(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/account_notifications/{}'.format(self.client.CanvasAccountNotifications.account_id,self.client.CanvasAccountNotifications.account_notification_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccountNotifications.generate_queries())
+
+        pprint(request)
+
 
 
 
