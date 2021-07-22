@@ -6,6 +6,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import DriverManager as FirefoxDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium import webdriver
+from pprint import pprint
 
 class OAuthRequests(CanvasClient):
 
@@ -48,13 +49,32 @@ class CanvasTokenScopes(CanvasClient):
 
     def __init__(self,client):
         self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
 
     def list_scopes(self):
 
-        url = 'https://{}/api/v1/accounts/{}/scopes'.format(self.install_url,self.client.CanvasTokenScopes.account_id)
+        url = self.base_url + '/api/v1/accounts/{}/scopes'.format(self.install_url,self.client.CanvasTokenScopes.account_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasTokenScopes.generate_queries())
 
         pprint(request)
+
+
+class CanvasAccountDomainLookup(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def search_account_domains(self):
+
+        url = self.base_url + '/api/v1/accounts/search'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAccountDomainLookup.generate_queries())
+
+        pprint(request)
+
+
+
 
 
