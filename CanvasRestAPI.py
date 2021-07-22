@@ -75,6 +75,21 @@ class CanvasAccountDomainLookup(CanvasClient):
         pprint(request)
 
 
+class CanvasAccountNotifications(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def get_index_of_user_global_notification(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/account_notifications'.format(self.client.CanvasAccountNotifications.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAccountNotifications.generate_queries())
+
+        pprint(request)
+
+
 
 
 
