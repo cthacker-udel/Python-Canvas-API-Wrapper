@@ -1,10 +1,11 @@
+import requests
+
 from CanvasClient import CanvasClient
 from webdriver_manager.opera import OperaDriverManager
 from webdriver_manager.chrome import ChromeDriverManager
 from webdriver_manager.firefox import DriverManager as FirefoxDriverManager
 from webdriver_manager.microsoft import EdgeChromiumDriverManager
 from selenium import webdriver
-
 
 class OAuthRequests(CanvasClient):
 
@@ -36,3 +37,24 @@ class OAuthRequests(CanvasClient):
 
 
         ### user accepts, then canvas sends a oauth2 code in the query response
+
+
+
+#######################
+# API TOKEN SCOPES API
+#######################
+
+class CanvasTokenScopes(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+
+    def list_scopes(self):
+
+        url = 'https://{}/api/v1/accounts/{}/scopes'.format(self.install_url,self.client.CanvasTokenScopes.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasTokenScopes.generate_queries())
+
+        pprint(request)
+
+
