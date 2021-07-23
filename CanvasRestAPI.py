@@ -207,6 +207,14 @@ class CanvasAccount(CanvasClient):
 
         pprint(request)
 
+    def get_account_settings(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/settings'.format(self.client.CanvasAccount.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
