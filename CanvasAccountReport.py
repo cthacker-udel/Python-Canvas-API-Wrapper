@@ -6,6 +6,7 @@ class CanvasAccountReport(CanvasClient):
     def __init__(self):
         self.account_id = None
         self.report_id = None
+        self.report_type = None
         self.parameters = None
         self.parameters_course_id = None
         self.parameters_users = None
@@ -29,3 +30,4 @@ class CanvasAccountReport(CanvasClient):
         self.parameters = None
         self.parameters_course_id = None
         self.parameters_users = None
+        self.report_type = None

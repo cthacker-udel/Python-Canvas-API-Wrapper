@@ -138,7 +138,7 @@ class CanvasAccountReports(CanvasClient):
 
     def start_report(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/reports/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_id)
+        url = self.base_url + '/api/v1/accounts/{}/reports/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_type)
 
         request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccountReport.generate_queries())
 
@@ -146,7 +146,15 @@ class CanvasAccountReports(CanvasClient):
 
     def index_of_reports(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/reports/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_id)
+        url = self.base_url + '/api/v1/accounts/{}/reports/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_type)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def report_status(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/reports/{}/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_type,self.client.CanvasAccountReport.report_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
