@@ -256,6 +256,14 @@ class CanvasAccount(CanvasClient):
 
         pprint(request)
 
+    def update_account(self):
+
+        url = self.base_url + '/api/v1/accounts/{}'.format(self.client.CanvasAccount.account_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccount.generate_queries())
+
+        pprint(request)
+
 
 
 
