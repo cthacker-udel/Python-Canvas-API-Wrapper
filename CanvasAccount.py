@@ -5,6 +5,7 @@ class CanvasAccount(CanvasClient):
     def __init__(self):
 
         self.account_id = None
+        self.user_id = None
 
         self.include = None
         self.permissions = None

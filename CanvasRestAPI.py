@@ -264,6 +264,14 @@ class CanvasAccount(CanvasClient):
 
         pprint(request)
 
+    def delete_root_account_user(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/users/{}'.format(self.client.CanvasAccount.account_id,self.client.CanvasAccount.user_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccount.generate_queries())
+
+        pprint(request)
+
 
 
 
