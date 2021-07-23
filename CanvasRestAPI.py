@@ -215,6 +215,14 @@ class CanvasAccount(CanvasClient):
 
         pprint(request)
 
+    def get_account_permissions(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/permissions'.format(self.client.CanvasAccount.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAccount.generate_queries())
+
+        pprint(request)
+
 
 
 
