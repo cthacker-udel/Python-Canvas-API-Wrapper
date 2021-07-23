@@ -272,6 +272,14 @@ class CanvasAccount(CanvasClient):
 
         pprint(request)
 
+    def create_new_sub_account(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/sub_accounts'.format(self.client.CanvasAccount.account_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccount.generate_queries())
+
+        pprint(request)
+
 
 
 
