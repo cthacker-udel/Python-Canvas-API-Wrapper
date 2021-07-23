@@ -6,6 +6,7 @@ class CanvasAccount(CanvasClient):
 
         self.account_id = None
         self.user_id = None
+        self.sub_account_id = None
 
         self.include = None
         self.permissions = None
