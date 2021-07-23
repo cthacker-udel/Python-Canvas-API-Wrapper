@@ -168,6 +168,21 @@ class CanvasAccountReports(CanvasClient):
 
         pprint(request)
 
+class CanvasAccount(CanvasClient):
+
+    def __init__(self,client):
+
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_accounts(self):
+
+        url = self.base_url + '/api/v1/accounts'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAccount.generate_queries())
+
+        pprint(request)
+
 
 
 
