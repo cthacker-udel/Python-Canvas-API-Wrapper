@@ -183,6 +183,14 @@ class CanvasAccount(CanvasClient):
 
         pprint(request)
 
+    def get_admin_manageable_accounts(self):
+
+        url = self.base_url + '/api/v1/manageable_accounts'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
