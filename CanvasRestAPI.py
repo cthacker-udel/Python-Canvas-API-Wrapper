@@ -160,6 +160,14 @@ class CanvasAccountReports(CanvasClient):
 
         pprint(request)
 
+    def delete_report(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/reports/{}/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_type,self.client.CanvasAccountReport.report_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
