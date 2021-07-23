@@ -239,6 +239,14 @@ class CanvasAccount(CanvasClient):
 
         pprint(request)
 
+    def get_account_help_links(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/help_links'.format(self.client.CanvasAccount.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
