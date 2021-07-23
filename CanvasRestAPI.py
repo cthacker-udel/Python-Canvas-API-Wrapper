@@ -248,6 +248,15 @@ class CanvasAccount(CanvasClient):
         pprint(request)
 
 
+    def list_account_active_courses(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/courses'.format(self.client.CanvasAccount.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
 
 
 
