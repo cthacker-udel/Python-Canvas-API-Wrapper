@@ -121,6 +121,21 @@ class CanvasAccountNotifications(CanvasClient):
 
         pprint(request)
 
+class CanvasAccountReports(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+
+    def list_available_reports(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/reports'.format(self.client.CanvasAccountReport.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
