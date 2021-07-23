@@ -231,6 +231,14 @@ class CanvasAccount(CanvasClient):
 
         pprint(request)
 
+    def get_terms_of_service(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/terms_of_service'.format(self.client.CanvasAccount.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
