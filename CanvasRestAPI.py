@@ -136,6 +136,14 @@ class CanvasAccountReports(CanvasClient):
 
         pprint(request)
 
+    def start_report(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/reports/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccountReport.generate_queries())
+
+        pprint(request)
+
 
 
 
