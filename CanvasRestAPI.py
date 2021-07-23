@@ -144,6 +144,14 @@ class CanvasAccountReports(CanvasClient):
 
         pprint(request)
 
+    def index_of_reports(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/reports/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
