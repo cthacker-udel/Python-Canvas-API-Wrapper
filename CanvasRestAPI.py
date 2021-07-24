@@ -304,6 +304,14 @@ class CanvasAdmin(CanvasClient):
 
         pprint(request)
 
+    def remove_account_admin(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/admins/{}'.format(self.client.CanvasAdmin.account_id,self.client.CanvasAdmin.admin_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAdmin.generate_queries())
+
+        pprint(request)
+
 
 
 
