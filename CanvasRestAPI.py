@@ -289,6 +289,22 @@ class CanvasAccount(CanvasClient):
         pprint(request)
 
 
+class CanvasAdmin(CanvasClient):
+
+    def __init__(self,client):
+
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def make_account_admin(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/admins'.format(self.client.CanvasAdmin.account_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAdmin.generate_queries())
+
+        pprint(request)
+
+
 
 
 
