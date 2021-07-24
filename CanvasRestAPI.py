@@ -353,6 +353,21 @@ class CanvasAnalytics(CanvasClient):
 
         pprint(request)
 
+    def get_term_department_grade_data(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/analytics/terms/{}/grades'.format(self.client.CanvasAnalytics.account_id,self.client.CanvasAnalytics.term_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_current_department_grade_data(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/analytics/current/grades'.format(self.client.CanvasAnalytics.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
 
 
 
