@@ -321,6 +321,38 @@ class CanvasAdmin(CanvasClient):
         pprint(request)
 
 
+class CanvasAnalytics(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+
+    def get_term_department_level_participation_data(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/analytics/terms/{}/activity'.format(self.client.CanvasAnalytics.account_id,self.client.CanvasAnalytics.term_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
+    def get_current_department_level_analytics(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/analytics/current/activity'.format(self.client.CanvasAnalytics.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_completed_department_level_analytics(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/analytics/completed/activity'.format(self.client.CanvasAnalytics.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
