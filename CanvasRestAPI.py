@@ -312,6 +312,14 @@ class CanvasAdmin(CanvasClient):
 
         pprint(request)
 
+    def list_account_admins(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/admins'.format(self.client.CanvasAdmin.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAdmin.generate_queries())
+
+        pprint(request)
+
 
 
 
