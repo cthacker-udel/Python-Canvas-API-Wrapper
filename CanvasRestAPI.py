@@ -434,5 +434,13 @@ class CanvasAnalytics(CanvasClient):
 
         pprint(request)
 
+    def get_user_messaging_data(self):
+
+        url = self.base_url + '/api/v1/courses/{}/analytics/users/{}/communication'.format(self.client.CanvasAnalytics.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
