@@ -369,6 +369,29 @@ class CanvasAnalytics(CanvasClient):
 
         pprint(request)
 
+    def get_term_department_statistics(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/analytics/terms/{}/statistics'.format(self.client.CanvasAnalytics.account_id,self.client.CanvasAnalytics.term_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_current_department_statistics(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/analytics/current/statistics'.format(self.client.CanvasAnalytics.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_completed_department_statistics(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/analytics/completed/statistics'.format(self.client.CanvasAnalytics.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
 
 
 
