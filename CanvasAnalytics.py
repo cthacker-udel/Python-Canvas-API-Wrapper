@@ -7,6 +7,7 @@ class CanvasAnayltics(CanvasClient):
 
         self.account_id = None
         self.term_id = None
+        self.course_id = None
 
     def generate_queries(self):
 
