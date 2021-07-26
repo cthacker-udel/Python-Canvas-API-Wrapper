@@ -426,4 +426,13 @@ class CanvasAnalytics(CanvasClient):
         pprint(request)
 
 
+    def get_user_assignment_data(self):
+
+        url = self.base_url + '/api/v1/courses/{}/analytics/users/{}/assignments'.format(self.client.CanvasAnalytics.course_id,self.client.CanvasAnalytics.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
 

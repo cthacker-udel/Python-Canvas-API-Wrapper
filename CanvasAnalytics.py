@@ -8,6 +8,7 @@ class CanvasAnayltics(CanvasClient):
         self.account_id = None
         self.term_id = None
         self.course_id = None
+        self.user_id = None
 
         self.sort_column = None
         self.student_id = None
