@@ -409,5 +409,13 @@ class CanvasAnalytics(CanvasClient):
 
         pprint(request)
 
+    def get_course_level_student_summary_data(self):
+
+        url = self.base_url + '/api/v1/courses/{}/analytics/student_summaries'.format(self.client.CanvasAnalytics.course_id)
+
+        request = requests.get(url,auth={'Authorization {}'.format(self.token)},params=self.client.CanvasAnalytics.generate_queries())
+
+        pprint(request)
+
 
 
