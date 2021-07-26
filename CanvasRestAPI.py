@@ -393,5 +393,13 @@ class CanvasAnalytics(CanvasClient):
 
         pprint(request)
 
+    def get_course_level_participation_data(self):
+
+        url = self.base_url + '/api/v1/courses/{}/analytics/activity'.format(self.client.CanvasAnalytics.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
