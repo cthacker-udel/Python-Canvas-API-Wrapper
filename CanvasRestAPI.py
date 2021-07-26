@@ -417,5 +417,13 @@ class CanvasAnalytics(CanvasClient):
 
         pprint(request)
 
+    def get_user_participation_data(self):
+
+        url = self.base_url + '/api/v1/courses/{}/analytics/users/{}/activity'.format(self.client.CanvasAnalytics.course_id,self.client.CanvasAnalytics.student_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
