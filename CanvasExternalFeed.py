@@ -10,6 +10,7 @@ class CanvasExternalFeed(CanvasClient):
         self.verbosity = None
         self.course_id = None
         self.group_id = None
+        self.external_feed_id = None
 
     def generate_queries(self):
 
@@ -28,3 +29,6 @@ class CanvasExternalFeed(CanvasClient):
         self.url = None
         self.header_match = None
         self.verbosity = None
+        self.course_id = None
+        self.group_id = None
+        self.external_feed_id = None
