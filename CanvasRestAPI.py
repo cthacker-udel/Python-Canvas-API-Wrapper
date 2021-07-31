@@ -443,4 +443,20 @@ class CanvasAnalytics(CanvasClient):
         pprint(request)
 
 
+class CanvasExternalFeed(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_external_feed_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/external_feeds'.format(self.client.CanvasExternalFeed.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+
+
+
+
 
