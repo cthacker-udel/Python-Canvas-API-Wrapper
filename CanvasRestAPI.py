@@ -499,6 +499,21 @@ class CanvasExternalFeed(CanvasClient):
         pprint(request)
 
 
+class CanvasAnnouncements(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def list_announcements(self):
+
+        url = self.base_url + '/api/v1/announcements'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAnnouncements.generate_queries())
+
+        pprint(request)
+
+
 
 
 
