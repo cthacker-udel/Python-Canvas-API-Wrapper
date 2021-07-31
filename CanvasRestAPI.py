@@ -482,9 +482,17 @@ class CanvasExternalFeed(CanvasClient):
 
         pprint(request)
 
-    def delete_external_feed(self):
+    def delete_external_feed_course_id(self):
 
         url = self.base_url + '/api/v1/courses/{}/external_feeds/{}'.format(self.client.CanvasExternalFeed.course_id,self.client.CanvasExternalFeed.external_feed_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasExternalFeed.generate_queries())
+
+        pprint(request)
+
+    def delete_external_feed_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/external_feeds/{}'.format(self.client.CanvasExternalFeed.group_id,self.client.CanvasExternalFeed.external_feed_id)
 
         request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasExternalFeed.generate_queries())
 
