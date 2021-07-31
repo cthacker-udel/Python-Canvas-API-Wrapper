@@ -465,6 +465,25 @@ class CanvasExternalFeed(CanvasClient):
 
         pprint(request)
 
+    def create_external_feed_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/external_feeds'
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasExternalFeed.generate_queries())
+
+        pprint(request)
+
+
+    def create_external_feed_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/external_feeds'.format(self.client.CanvasExternalFeed.group_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasExternalFeed.generate_queries())
+
+        pprint(request)
+
+
+
 
 
 
