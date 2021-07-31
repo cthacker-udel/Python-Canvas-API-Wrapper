@@ -499,7 +499,7 @@ class CanvasExternalFeed(CanvasClient):
         pprint(request)
 
 
-class CanvasAnnouncements(CanvasClient):
+class CanvasAnnouncement(CanvasClient):
 
     def __init__(self,client):
         self.base_url = 'https://{}'.format(self.install_url)
@@ -510,6 +510,22 @@ class CanvasAnnouncements(CanvasClient):
         url = self.base_url + '/api/v1/announcements'
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAnnouncements.generate_queries())
+
+        pprint(request)
+
+
+class CanvasAppointmentGroups(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+
+    def list_appointment_groups(self):
+
+        url = self.base_url + '/api/v1/appointment_groups'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAppointmentGroup.generate_queries())
 
         pprint(request)
 
