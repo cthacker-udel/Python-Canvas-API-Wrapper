@@ -553,6 +553,14 @@ class CanvasAppointmentGroups(CanvasClient):
 
         pprint(request)
 
+    def delete_appointment_group(self):
+
+        url = self.base_url + '/api/v1/appointment_groups/{}'.format(self.client.CanvasAppointmentGroup.appointment_group_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAppointmentGroup.generate_queries())
+
+        pprint(request)
+
 
 
 
