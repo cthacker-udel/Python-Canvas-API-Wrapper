@@ -577,6 +577,14 @@ class CanvasAppointmentGroups(CanvasClient):
 
         pprint(request)
 
+    def get_next_appointment(self):
+
+        url = self.base_url + '/api/v1/appointment_groups/next_appointment'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAppointmentGroup.generate_queries())
+
+        pprint(request)
+
 
 
 

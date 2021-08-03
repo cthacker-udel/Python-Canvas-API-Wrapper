@@ -27,10 +27,14 @@ class CanvasAppointmentGroup(CanvasClient):
 
         self.registration_status = None
 
+        self.appointment_group_ids = []
+
 
     def generate_queries(self):
 
         body = {}
+        if len(self.appointment_group_ids) > 0:
+            body['appointment_group_ids[]'] = ','.join(self.appointment_group_ids)
         if self.registration_status != None:
             body['registration_status'] = self.registration_status
         if self.cancel_reason != None:
@@ -72,6 +76,7 @@ class CanvasAppointmentGroup(CanvasClient):
 
     def clear_queries(self):
 
+        self.appointment_group_ids = None
         self.scope = None
         self.context_codes = None
         self.include_past_appointments = None
