@@ -569,6 +569,13 @@ class CanvasAppointmentGroups(CanvasClient):
 
         pprint(request)
 
+    def list_student_group_participants(self):
+
+        url = self.base_url + '/api/v1/appointment_groups/{}/groups'.format(self.client.CanvasAppointmentGroup.appointment_group_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAppointmentGroup.generate_queries())
+
+        pprint(request)
 
 
 
