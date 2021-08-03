@@ -25,11 +25,14 @@ class CanvasAppointmentGroup(CanvasClient):
 
         self.cancel_reason = None
 
+        self.registration_status = None
+
 
     def generate_queries(self):
 
         body = {}
-
+        if self.registration_status != None:
+            body['registration_status'] = self.registration_status
         if self.cancel_reason != None:
             body['cancel_reason'] = self.cancel_reason
         if self.appt_context_codes != None:
@@ -86,3 +89,4 @@ class CanvasAppointmentGroup(CanvasClient):
         self.appt_new_appointments = None
         self.appt_participant_visibility = None
         self.cancel_reason = None
+        self.registration_status = None
