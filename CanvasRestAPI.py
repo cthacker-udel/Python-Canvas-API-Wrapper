@@ -109,7 +109,7 @@ class CanvasAccountNotifications(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/account_notifications'.format(self.client.CanvasAccountNotifications.account_id)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccountNotifications.generate_queries())
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAccountNotifications.generate_queries())
 
         pprint(request)
 
@@ -117,7 +117,7 @@ class CanvasAccountNotifications(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/account_notifications/{}'.format(self.client.CanvasAccountNotifications.account_id,self.client.CanvasAccountNotifications.account_notification_id)
 
-        request = requests.put(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccountNotifications.generate_queries())
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAccountNotifications.generate_queries())
 
         pprint(request)
 
@@ -140,7 +140,7 @@ class CanvasAccountReports(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/reports/{}'.format(self.client.CanvasAccountReport.account_id,self.client.CanvasAccountReport.report_type)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccountReport.generate_queries())
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAccountReport.generate_queries())
 
         pprint(request)
 
@@ -260,7 +260,7 @@ class CanvasAccount(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}'.format(self.client.CanvasAccount.account_id)
 
-        request = requests.put(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccount.generate_queries())
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAccount.generate_queries())
 
         pprint(request)
 
@@ -268,7 +268,7 @@ class CanvasAccount(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/users/{}'.format(self.client.CanvasAccount.account_id,self.client.CanvasAccount.user_id)
 
-        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccount.generate_queries())
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAccount.generate_queries())
 
         pprint(request)
 
@@ -276,7 +276,7 @@ class CanvasAccount(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/sub_accounts'.format(self.client.CanvasAccount.account_id)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccount.generate_queries())
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAccount.generate_queries())
 
         pprint(request)
 
@@ -284,7 +284,7 @@ class CanvasAccount(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/sub_accounts/{}'.format(self.client.CanvasAccount.account_id,self.client.CanvasAccount.sub_account_id)
 
-        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAccount.generate_queries())
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAccount.generate_queries())
 
         pprint(request)
 
@@ -300,7 +300,7 @@ class CanvasAdmin(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/admins'.format(self.client.CanvasAdmin.account_id)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAdmin.generate_queries())
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAdmin.generate_queries())
 
         pprint(request)
 
@@ -308,7 +308,7 @@ class CanvasAdmin(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/admins/{}'.format(self.client.CanvasAdmin.account_id,self.client.CanvasAdmin.admin_id)
 
-        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasAdmin.generate_queries())
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAdmin.generate_queries())
 
         pprint(request)
 
@@ -469,7 +469,7 @@ class CanvasExternalFeed(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/external_feeds'
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasExternalFeed.generate_queries())
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasExternalFeed.generate_queries())
 
         pprint(request)
 
@@ -478,7 +478,7 @@ class CanvasExternalFeed(CanvasClient):
 
         url = self.base_url + '/api/v1/groups/{}/external_feeds'.format(self.client.CanvasExternalFeed.group_id)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasExternalFeed.generate_queries())
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasExternalFeed.generate_queries())
 
         pprint(request)
 
@@ -486,7 +486,7 @@ class CanvasExternalFeed(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/external_feeds/{}'.format(self.client.CanvasExternalFeed.course_id,self.client.CanvasExternalFeed.external_feed_id)
 
-        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasExternalFeed.generate_queries())
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasExternalFeed.generate_queries())
 
         pprint(request)
 
@@ -494,7 +494,7 @@ class CanvasExternalFeed(CanvasClient):
 
         url = self.base_url + '/api/v1/groups/{}/external_feeds/{}'.format(self.client.CanvasExternalFeed.group_id,self.client.CanvasExternalFeed.external_feed_id)
 
-        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasExternalFeed.generate_queries())
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasExternalFeed.generate_queries())
 
         pprint(request)
 
@@ -528,6 +528,16 @@ class CanvasAppointmentGroups(CanvasClient):
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAppointmentGroup.generate_queries())
 
         pprint(request)
+
+    def create_appointment_group(self):
+
+        url = self.base_url + '/api/v1/appointment_groups'
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAppointmentGroup.generate_queries())
+
+        pprint(request)
+
+
 
 
 
