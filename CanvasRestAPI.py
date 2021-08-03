@@ -561,6 +561,8 @@ class CanvasAppointmentGroups(CanvasClient):
 
         pprint(request)
 
+    def list_user_participants(self):
+
 
 
 
