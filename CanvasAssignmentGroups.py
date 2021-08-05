@@ -12,6 +12,7 @@ class CanvasAssignmentGroups(CanvasClient):
         self.override_assignment_dates = None
         self.grading_period_id = None
         self.scope_assignments_to_student = None
+        self.assignment_group_id = None
 
     def generate_queries(self):
 
@@ -38,3 +39,4 @@ class CanvasAssignmentGroups(CanvasClient):
         self.override_assignment_dates = None
         self.grading_period_id = None
         self.scope_assignments_to_student = None
+        self.assignment_group_id = None
