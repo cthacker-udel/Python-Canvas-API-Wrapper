@@ -586,6 +586,20 @@ class CanvasAppointmentGroups(CanvasClient):
         pprint(request)
 
 
+class CanvasAssignmentExtensions(CanvasClient):
+
+    def __init__(self):
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def set_extensions_student_assignment_submissions(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignments/{}/extensions'.format(self.client.CanvasAssignmentExtensions.course_id,self.client.CanvasAssignmentExtensions.assignment_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAssignmentExtensions.generate_queries())
+
+        pprint(request)
+
+
 
 
 
