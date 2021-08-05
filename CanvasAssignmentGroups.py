@@ -14,9 +14,28 @@ class CanvasAssignmentGroups(CanvasClient):
         self.scope_assignments_to_student = None
         self.assignment_group_id = None
 
+        self.name = None
+        self.position = None
+        self.group_weight = None
+        self.sis_source_id = None
+        self.integration_data = None
+        self.rules = None
+
     def generate_queries(self):
 
         body = {}
+        if self.name != None:
+            body['name'] = self.name
+        if self.position != None:
+            body['position'] = self.position
+        if self.group_weight != None:
+            body['group_weight'] = self.group_weight
+        if self.sis_source_id != None:
+            body['sis_source_id'] = self.sis_source_id
+        if self.integration_data != None:
+            body['integration_data'] = self.integration_data
+        if self.rules != None:
+            body['rules'] = self.rules
         if self.include != None:
             body['include[]'] = self.include
         if self.assignment_ids != None:
@@ -40,3 +59,9 @@ class CanvasAssignmentGroups(CanvasClient):
         self.grading_period_id = None
         self.scope_assignments_to_student = None
         self.assignment_group_id = None
+        self.name = None
+        self.position = None
+        self.group_weight = None
+        self.sis_source_id = None
+        self.integration_data = None
+        self.rules = None
