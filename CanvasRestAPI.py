@@ -639,6 +639,14 @@ class CanvasAssignmentGroups(CanvasClient):
 
         pprint(request)
 
+    def destroy_assignment_group(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignment_groups/{}'.format(self.client.CanvasAssignmentGroups.course_id,self.client.CanvasAssignmentGroups.assignment_group_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},data=self.client.CanvasAssignmentGroups.generate_queries())
+
+        pprint(request)
+
 
 
 

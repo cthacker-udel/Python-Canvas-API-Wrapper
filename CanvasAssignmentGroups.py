@@ -21,9 +21,13 @@ class CanvasAssignmentGroups(CanvasClient):
         self.integration_data = None
         self.rules = None
 
+        self.move_assignments_to = None
+
     def generate_queries(self):
 
         body = {}
+        if self.move_assignments_to != None:
+            body['move_assignments_to'] = self.move_assignments_to
         if self.name != None:
             body['name'] = self.name
         if self.position != None:
@@ -65,3 +69,4 @@ class CanvasAssignmentGroups(CanvasClient):
         self.sis_source_id = None
         self.integration_data = None
         self.rules = None
+        self.move_assignments_to = None
