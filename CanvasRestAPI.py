@@ -685,6 +685,14 @@ class CanvasAssignments(CanvasClient):
 
         pprint(request)
 
+    def duplicate_assignment(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assingments/{}/duplicate'.format(self.client.CanvasAssignments.course_id,self.client.CanvasAssignments.assignment_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAssignments.generate_queries())
+
+        pprint(request)
+
 
 
 
