@@ -647,6 +647,22 @@ class CanvasAssignmentGroups(CanvasClient):
 
         pprint(request)
 
+class CanvasAssignments(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def delete_assignment(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignments/{}'.format(self.client.CanvasAssignments.course_id,self.client.CanvasAssignments.assignment_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
+
 
 
 
