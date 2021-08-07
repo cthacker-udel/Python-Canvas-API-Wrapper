@@ -6,6 +6,7 @@ class CanvasAssignments(CanvasClient):
 
         self.course_id = None
         self.assignment_id = None
+        self.user_id = None
 
         self.include = None
         self.search_term = None

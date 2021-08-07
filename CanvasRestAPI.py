@@ -677,6 +677,14 @@ class CanvasAssignments(CanvasClient):
 
         pprint(request)
 
+    def list_user_assignments(self):
+
+        url = self.base_url + '/api/v1/users/{}/courses/{}/assignments'.format(self.client.CanvasAssignments.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
