@@ -106,3 +106,26 @@ class CanvasAssignments(CanvasClient):
         self.anonymous_grading = None
         self.allowed_attempts = None
         self.annotatable_attachment_id = None
+
+
+    def generate_queries(self):
+
+        body = {}
+
+        if self.include != None:
+            body['include[]'] = self.include
+        if self.search_term != None:
+            body['search_term'] = self.search_term
+        if self.override_assignment_dates != None:
+            body['override_assignment_dates'] = self.override_assignment_dates
+        if self.needs_grading_count_by_section != None:
+            body['needs_grading_count_by_section'] = self.needs_grading_count_by_section
+        if self.bucket != None:
+            body['bucket'] = self.bucket
+        if self.assingment_ids != None:
+            body['assignment_ids[]'] = self.assingment_ids
+        if self.order_by != None:
+            body['order_by'] = self.order_by
+        if self.post_to_sis != None:
+            body['post_to_sis'] = self.post_to_sis
+        return body
