@@ -661,11 +661,19 @@ class CanvasAssignments(CanvasClient):
 
         pprint(request)
 
-    def list_assignments(self):
+    def list_assignments_v1(self):
 
         url = self.base_url + '/api/v1/courses/{}/assignments'.format(self.client.CanvasAssignments.course_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAssignments.generate_queries())
+
+        pprint(request)
+
+    def list_assignments_v2(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignment_groups/{}/assignments'.format(self.client.CanvasAssignments.course_id,self.client.CanvasAssignments.assignment_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAssignments.generate_queries())
 
         pprint(request)
 
