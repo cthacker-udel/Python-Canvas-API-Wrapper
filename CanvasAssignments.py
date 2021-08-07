@@ -129,4 +129,6 @@ class CanvasAssignments(CanvasClient):
             body['order_by'] = self.order_by
         if self.post_to_sis != None:
             body['post_to_sis'] = self.post_to_sis
+        if self.all_dates != None:
+            body['all_dates'] = self.all_dates
         return body
