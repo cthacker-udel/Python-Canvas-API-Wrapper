@@ -729,7 +729,7 @@ class CanvasAssignments(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/assignments/{}/overrides'.format(self.client.CanvasAssignments.course_id,self.client.CanvasAssignments.assignment_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAssignments.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
@@ -737,7 +737,15 @@ class CanvasAssignments(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/assignments/{}/overrides/{}'.format(self.client.CanvasAssignments.course_id,self.client.CanvasAssignments.assignment_id,self.client.CanvasAssignments.override_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAssignments.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def redirect_assignment_override_to_group(self):
+
+        url = self.base_url + '/api/v1/groups/{}/assignments/{}/override'.format(self.client.CanvasAssignments.group_id,self.client.CanvasAssignments.assignment_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 

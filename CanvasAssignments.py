@@ -58,6 +58,7 @@ class CanvasAssignments(CanvasClient):
         self.annotatable_attachment_id = None
 
         self.override_id = None
+        self.group_id = None
 
     def clear_queries(self):
 
