@@ -61,6 +61,14 @@ class CanvasAssignments(CanvasClient):
         self.group_id = None
         self.course_section_id = None
 
+        self.student_ids = None
+        self.title = None
+        self.override_group_id = None
+        self.override_course_section_id = None
+        self.override_due_at = None
+        self.override_unlock_at = None
+        self.override_lock_at = None
+
     def clear_queries(self):
 
         self.include = None
@@ -117,6 +125,20 @@ class CanvasAssignments(CanvasClient):
 
         body = {}
 
+        if self.student_ids is not None:
+            body['assignment_override[student_ids][]'] = self.student_ids
+        if self.title is not None:
+            body['assignment_override[title]'] = self.title
+        if self.override_group_id is not None:
+            body['assignment_override[group_id]'] = self.override_group_id
+        if self.override_course_section_id is not None:
+            body['assignment_override[course_section_id]'] = self.override_course_section_id
+        if self.override_due_at is not None:
+            body['assignment_override[due_at]'] = self.override_due_at
+        if self.override_unlock_at is not None:
+            body['assignment_override[unlock_at]'] = self.override_unlock_at
+        if self.override_lock_at is not None:
+            body['assignment_override[lock_at]'] = self.override_lock_at
         if self.include != None:
             body['include[]'] = self.include
         if self.search_term != None:
