@@ -131,4 +131,76 @@ class CanvasAssignments(CanvasClient):
             body['post_to_sis'] = self.post_to_sis
         if self.all_dates != None:
             body['all_dates'] = self.all_dates
+        if self.assignment_name is not None:
+            body['assignment[name'] = self.assignment_name
+        if self.assignment_position is not None:
+            body['assignment[position]'] = self.assignment_position
+        if self.assignment_submission_types is not None:
+            body['assignment[submission_types][]'] = self.assignment_submission_types
+        if self.assignment_allowed_extensions is not None:
+            body['assignment[allowed_extensions][]'] = self.assignment_allowed_extensions
+        if self.turnitin_enabled is not None:
+            body['assignment[turnitin_enabled]'] = self.turnitin_enabled
+        if self.vericite_enabled is not None:
+            body['assignment[vericite_enabled]'] = self.vericite_enabled
+        if self.turnitin_settings is not None:
+            body['assignment[turnitin_settings]'] = self.turnitin_settings
+        if self.integration_data is not None:
+            body['assignment[integration_data]'] = self.integration_data
+        if self.integration_id is not None:
+            body['assignment[integration_id]'] = self.integration_id
+        if self.peer_reviews is not None:
+            body['assignment[peer_reviews]'] = self.peer_reviews
+        if self.automatic_peer_reviews is not None:
+            body['assignment[automatic_peer_reviews]'] = self.automatic_peer_reviews
+        if self.notify_of_update is not None:
+            body['assignment[notify_of_update]'] = self.notify_of_update
+        if self.group_category_id is not None:
+            body['assignment[group_category_id]'] = self.group_category_id
+        if self.grade_group_students_individually is not None:
+            body['assignment[grade_group_students_individually]'] = self.grade_group_students_individually
+        if self.points_possible is not None:
+            body['assignment[points_possible]'] = self.points_possible
+        if self.grading_type is not None:
+            body['assignment[grading_type]'] = self.grading_type
+        if self.due_at is not None:
+            body['assignment[due_at]'] = self.due_at
+        if self.lock_at is not None:
+            body['assignment[lock_at]'] = self.lock_at
+        if self.unlock_at is not None:
+            body['assignment[unlock_at]'] = self.unlock_at
+        if self.description is not None:
+            body['assignment[description]'] = self.description
+        if self.assignment_group_id is not None:
+            body['assignment[assignment_group_id]'] = self.assignment_group_id
+        if self.assignment_overrides is not None:
+            body['assignment[assignment_overrides][]'] = self.assignment_overrides
+        if self.only_visible_to_overrides is not None:
+            body['assignment[only_visible_to_overrides]'] = self.only_visible_to_overrides
+        if self.published is not None:
+            body['assignment[published]'] = self.published
+        if self.grading_standard_id is not None:
+            body['assignment[grading_standard_id]'] = self.grading_standard_id
+        if self.omit_from_final_grade is not None:
+            body['assignment[omit_from_final_grade]'] = self.omit_from_final_grade
+        if self.quiz_lti is not None:
+            body['assignment[quiz_lti]'] = self.quiz_lti
+        if self.moderated_grading is not None:
+            body['assignment[moderated_grading]'] = self.moderated_grading
+        if self.grader_count is not None:
+            body['assignment[grader_count]'] = self.grader_count
+        if self.final_grader_id is not None:
+            body['assignment[final_grader_id]'] = self.final_grader_id
+        if self.grader_comments_visible_to_graders is not None:
+            body['assignment[grader_comments_visible_to_graders]'] = self.grader_comments_visible_to_graders
+        if self.graders_anonymous_to_graders is not None:
+            body['assignment[graders_anonymous_to_graders]'] = self.graders_anonymous_to_graders
+        if self.graders_names_visible_to_final_grader is not None:
+            body['assignment[graders_names_visible_to_final_grader]'] = self.graders_names_visible_to_final_grader
+        if self.anonymous_grading is not None:
+            body['assignment[anonymous_grading]'] = self.anonymous_grading
+        if self.allowed_attempts is not None:
+            body['assignment[allowed_attempts]'] = self.allowed_attempts
+        if self.annotatable_attachment_id is not None:
+            body['assignment[annotatable_attachment_id]'] = self.annotatable_attachment_id
         return body
