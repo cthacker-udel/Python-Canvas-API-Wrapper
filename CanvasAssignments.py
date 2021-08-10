@@ -57,6 +57,8 @@ class CanvasAssignments(CanvasClient):
         self.allowed_attempts = None
         self.annotatable_attachment_id = None
 
+        self.override_id = None
+
     def clear_queries(self):
 
         self.include = None

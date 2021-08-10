@@ -733,6 +733,14 @@ class CanvasAssignments(CanvasClient):
 
         pprint(request)
 
+    def get_single_assignment_override(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignments/{}/overrides/{}'.format(self.client.CanvasAssignments.course_id,self.client.CanvasAssignments.assignment_id,self.client.CanvasAssignments.override_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAssignments.generate_queries())
+
+        pprint(request)
+
 
 
 
