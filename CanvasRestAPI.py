@@ -717,6 +717,13 @@ class CanvasAssignments(CanvasClient):
 
         pprint(request)
 
+    def bulk_update_dates(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignments/bulk_update'.format(self.client.CanvasAssignments.course_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAssignments.generate_queries())
+
+        pprint(request)
 
 
 
