@@ -119,6 +119,17 @@ class CanvasAssignments(CanvasClient):
         self.anonymous_grading = None
         self.allowed_attempts = None
         self.annotatable_attachment_id = None
+        self.override_id = None
+        self.group_id = None
+        self.course_section_id = None
+
+        self.student_ids = None
+        self.title = None
+        self.override_group_id = None
+        self.override_course_section_id = None
+        self.override_due_at = None
+        self.override_unlock_at = None
+        self.override_lock_at = None
 
 
     def generate_queries(self):
