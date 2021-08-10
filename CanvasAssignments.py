@@ -59,6 +59,7 @@ class CanvasAssignments(CanvasClient):
 
         self.override_id = None
         self.group_id = None
+        self.course_section_id = None
 
     def clear_queries(self):
 

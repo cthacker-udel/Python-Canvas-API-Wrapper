@@ -750,6 +750,15 @@ class CanvasAssignments(CanvasClient):
         pprint(request)
 
 
+    def redirect_assignment_override_to_section(self):
+
+        url = self.base_url + '/api/v1/sections/{}/assignments/{}/override'.format(self.client.CanvasAssignments.course_section_id,self.client.CanvasAssignments.assignment_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
 
 
 
