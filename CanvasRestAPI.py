@@ -701,6 +701,14 @@ class CanvasAssignments(CanvasClient):
 
         pprint(request)
 
+    def create_assignment(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignments'.format(self.client.CanvasAssignments.course_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAssignments.generate_queries())
+
+        pprint(request)
+
 
 
 
