@@ -725,6 +725,14 @@ class CanvasAssignments(CanvasClient):
 
         pprint(request)
 
+    def list_assignment_overrides(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignments/{}/overrides'.format(self.client.CanvasAssignments.course_id,self.client.CanvasAssignments.assignment_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAssignments.generate_queries())
+
+        pprint(request)
+
 
 
 
