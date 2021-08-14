@@ -69,6 +69,9 @@ class CanvasAssignments(CanvasClient):
         self.override_unlock_at = None
         self.override_lock_at = None
 
+        self.assignment_overrides_batch = None
+        self.assignment_overrides_batch_id = None
+
     def clear_queries(self):
 
         self.include = None
@@ -131,11 +134,18 @@ class CanvasAssignments(CanvasClient):
         self.override_unlock_at = None
         self.override_lock_at = None
 
+        self.assignment_overrides_batch = None
+        self.assignment_overrides_batch_id = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.assignment_overrides_batch is not None:
+            body['assignment_overrides[][id]'] = self.assignment_overrides_batch
+        if self.assignment_overrides_batch_id is not None:
+            body['assignment_overrides[][assignment_id]'] = self.assignment_overrides_batch_id
         if self.student_ids is not None:
             body['assignment_override[student_ids][]'] = self.student_ids
         if self.title is not None:
