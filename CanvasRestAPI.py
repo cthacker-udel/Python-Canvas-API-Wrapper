@@ -774,6 +774,14 @@ class CanvasAssignments(CanvasClient):
 
         pprint(request)
 
+    def delete_assignment_override(self):
+
+        url = self.base_url + '/api/v1/courses/{}/assignments/{}/overrides/{}'.format(self.client.CanvasAssignments.course_id,self.client.CanvasAssignments.assignment_id,self.client.CanvasAssignments.override_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
