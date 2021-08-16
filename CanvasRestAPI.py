@@ -890,6 +890,14 @@ class CanvasAuth(CanvasClient):
 
         pprint(request)
 
+    def query_by_user(self):
+
+        url = self.base_url + '/api/v1/audit/authentication/users/{}'.format(self.client.CanvasAuth.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuth.generate_queries())
+
+        pprint(request)
+
 
 
 
