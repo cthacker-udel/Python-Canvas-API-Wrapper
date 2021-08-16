@@ -6,6 +6,8 @@ class CanvasAuthProvider(CanvasClient):
 
         self.account_id = None
         self.client_id = None
+        self.authentication_provider_id = None
+
         self.login_attribute = None
         self.federated_attributes = None
         self.self_registration = None
