@@ -931,6 +931,14 @@ class CanvasBlueprint(CanvasClient):
 
         pprint(request)
 
+    def begin_migration_to_push_to_associated_courses(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}/migrations'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+
+        pprint(request)
+
 
 
 
