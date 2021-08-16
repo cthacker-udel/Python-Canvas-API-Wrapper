@@ -859,6 +859,14 @@ class CanvasAuthenticationProviders(CanvasClient):
 
         pprint(request)
 
+    def update_account_auth_settings(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/sso_settings'.format(self.client.CanvasAuthProvider.account_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuthProvider.generate_queries())
+
+        pprint(request)
+
 
 
 
