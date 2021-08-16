@@ -835,6 +835,14 @@ class CanvasAuthenticationProviders(CanvasClient):
 
         pprint(request)
 
+    def get_authentication_provider(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/authentication_providers/{}'.format(self.client.CanvasAuthProvider.account_id,self.client.CanvasAuthProvider.authentication_provider_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuthProvider.generate_queries())
+
+        pprint(request)
+
 
 
 
