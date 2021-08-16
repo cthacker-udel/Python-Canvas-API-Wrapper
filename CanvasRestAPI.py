@@ -811,9 +811,17 @@ class CanvasAuthenticationProviders(CanvasClient):
     def __init__(self,client):
         self.base_url = 'https://{}'.format(self.install_url)
 
+    def list_authentication_providers(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/authentication_providers'.format(self.client.CanvasAuthProvider.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuthProvider.generate_queries())
+
+        pprint(request)
+
     def add_authentication_provider(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/authentication_providers/'.format(self.client.CanvasAuthProvider.account_id)
+        url = self.base_url + '/api/v1/accounts/{}/authentication_providers'.format(self.client.CanvasAuthProvider.account_id)
 
         request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuthProvider.generate_queries())
 
