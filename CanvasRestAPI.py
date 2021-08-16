@@ -878,7 +878,7 @@ class CanvasAuth(CanvasClient):
 
         url = self.base_url + '/api/v1/audit/authentication/logins/{}'.format(self.client.CanvasAuth.login_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuth.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAuth.generate_queries())
 
         pprint(request)
 
@@ -886,7 +886,7 @@ class CanvasAuth(CanvasClient):
 
         url = self.base_url + '/api/v1/audit/authentication/accounts/{}'.format(self.client.CanvasAuth.account_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuth.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAuth.generate_queries())
 
         pprint(request)
 
@@ -894,7 +894,22 @@ class CanvasAuth(CanvasClient):
 
         url = self.base_url + '/api/v1/audit/authentication/users/{}'.format(self.client.CanvasAuth.user_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuth.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasAuth.generate_queries())
+
+        pprint(request)
+
+class CanvasBlueprint(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+
+    def get_blueprint_info(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
