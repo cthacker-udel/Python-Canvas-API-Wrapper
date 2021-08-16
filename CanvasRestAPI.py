@@ -914,6 +914,15 @@ class CanvasBlueprint(CanvasClient):
         pprint(request)
 
 
+    def get_associated_course_information(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}/associated_courses'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
 
 
 
