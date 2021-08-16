@@ -53,7 +53,7 @@ class CanvasTokenScopes(CanvasClient):
 
     def list_scopes(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/scopes'.format(self.install_url,self.client.CanvasTokenScopes.account_id)
+        url = self.base_url + '/api/v1/accounts/{}/scopes'.format(self.client.CanvasTokenScopes.account_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasTokenScopes.generate_queries())
 
@@ -805,6 +805,20 @@ class CanvasAssignments(CanvasClient):
         request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAssignments.generate_queries())
 
         pprint(request)
+
+class CanvasAuthenticationProviders(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def add_authentication_provider(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/authentication_providers/'.format(self.client.CanvasAuthProvider.account_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasAuthProvider.generate_queries())
+
+        pprint(request)
+
 
 
 
