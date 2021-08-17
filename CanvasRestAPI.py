@@ -979,6 +979,14 @@ class CanvasBlueprint(CanvasClient):
 
         pprint(request)
 
+    def list_blueprint_subscriptions(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_subscriptions'.format(self.client.CanvasBlueprint.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+
+        pprint(request)
+
 
 
 
