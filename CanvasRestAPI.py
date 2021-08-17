@@ -947,6 +947,14 @@ class CanvasBlueprint(CanvasClient):
 
         pprint(request)
 
+    def get_unsynced_changes(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}/unsynced_changes'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+
+        pprint(request)
+
 
 
 
