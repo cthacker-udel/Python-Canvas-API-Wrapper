@@ -21,6 +21,8 @@ class CanvasBlueprint(CanvasClient):
         self.restricted = None
         self.restrictions = None
 
+        self.migration_id = None
+
     def generate_queries(self):
 
         body = {}
