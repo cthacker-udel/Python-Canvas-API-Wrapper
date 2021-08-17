@@ -951,7 +951,7 @@ class CanvasBlueprint(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}/unsynced_changes'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
@@ -959,7 +959,7 @@ class CanvasBlueprint(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}/migrations'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
@@ -967,7 +967,7 @@ class CanvasBlueprint(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}/migrations/{}'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id,self.client.CanvasBlueprint.migration_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
@@ -975,7 +975,7 @@ class CanvasBlueprint(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}/migrations/{}/details'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id,self.client.CanvasBlueprint.migration_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
@@ -983,7 +983,15 @@ class CanvasBlueprint(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/blueprint_subscriptions'.format(self.client.CanvasBlueprint.course_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def list_blueprint_imports(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_subscriptions/{}/migrations'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.subscription_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
