@@ -1042,6 +1042,14 @@ class CanvasBookmarks(CanvasClient):
 
         pprint(request)
 
+    def update_bookmark(self):
+
+        url = self.base_url + '/api/v1/users/self/bookmarks/{}'.format(self.client.CanvasBookmark.bookmark_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBookmark.generate_queries())
+
+        pprint(request)
+
 
 
 
