@@ -939,6 +939,14 @@ class CanvasBlueprint(CanvasClient):
 
         pprint(request)
 
+    def set_or_remove_restrictions_on_blueprint_course(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_templates/{}/restrict_item'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.template_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasBlueprint.generate_queries())
+
+        pprint(request)
+
 
 
 
