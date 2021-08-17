@@ -1050,6 +1050,14 @@ class CanvasBookmarks(CanvasClient):
 
         pprint(request)
 
+    def delete_bookmark(self):
+
+        url = self.base_url + '/api/v1/users/self/bookmarks/{}'.format(self.client.CanvasBookmark.bookmark_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
