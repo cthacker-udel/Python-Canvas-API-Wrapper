@@ -995,6 +995,14 @@ class CanvasBlueprint(CanvasClient):
 
         pprint(request)
 
+    def show_blueprint_import(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_subscriptions/{}/migrations/{}'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.subscription_id,self.client.CanvasBlueprint.migration_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
