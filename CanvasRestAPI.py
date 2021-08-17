@@ -1003,6 +1003,12 @@ class CanvasBlueprint(CanvasClient):
 
         pprint(request)
 
+    def get_import_details(self):
+
+        url = self.base_url + '/api/v1/courses/{}/blueprint_subscriptions/{}/migrations/{}/details'.format(self.client.CanvasBlueprint.course_id,self.client.CanvasBlueprint.subscription_id,self.client.CanvasBlueprint.migration_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
 
 
 
