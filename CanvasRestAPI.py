@@ -1009,6 +1009,23 @@ class CanvasBlueprint(CanvasClient):
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
+        pprint(request)
+
+
+class CanvasBookmarks(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_bookmarks(self):
+
+        url = self.base_url + '/api/v1/users/self/bookmarks'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
