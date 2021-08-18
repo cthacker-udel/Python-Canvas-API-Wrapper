@@ -1095,6 +1095,14 @@ class CanvasCalendarEvents(CanvasClient):
 
         pprint(request)
 
+    def create_calendar_event(self):
+
+        url = self.base_url + '/api/v1/calendar_events'
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCalendarEvents.generate_queries())
+
+        pprint(request)
+
 
 
 
