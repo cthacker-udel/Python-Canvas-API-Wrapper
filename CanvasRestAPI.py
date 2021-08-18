@@ -1059,6 +1059,21 @@ class CanvasBookmarks(CanvasClient):
         pprint(request)
 
 
+class CanvasBrandConfigurations(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def get_brand_config_variables(self):
+
+        url = self.base_url + '/api/v1/brand_variables/'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
 
 
 
