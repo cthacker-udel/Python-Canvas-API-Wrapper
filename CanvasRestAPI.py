@@ -1073,6 +1073,28 @@ class CanvasBrandConfigurations(CanvasClient):
 
         pprint(request)
 
+class CanvasCalendarEvents(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_calendar_events(self):
+
+        url = self.base_url + '/api/v1/calendar_events'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCalendarEvents.generate_queries())
+
+        pprint(request)
+
+    def list_user_calendar_events(self):
+
+        url = self.base_url + '/api/v1/users/{}/calendar_events'.format(self.client.CanvasCalendarEvents.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCalendarEvents.generate_queries())
+
+        pprint(request)
+
 
 
 
