@@ -1103,6 +1103,12 @@ class CanvasCalendarEvents(CanvasClient):
 
         pprint(request)
 
+    def get_single_calendar_event(self):
+
+        url = self.base_url + '/api/v1/calendar_events/{}'.format(self.client.CanvasCalendarEvents.calendar_event_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
 
 
 
