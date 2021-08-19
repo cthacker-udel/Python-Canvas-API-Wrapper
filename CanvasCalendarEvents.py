@@ -9,6 +9,9 @@ class CanvasCalendarEvents(CanvasClient):
         self.participant_id = None
         self.course_id = None
 
+        self.comments = None
+        self.cancel_existing = None
+
         self.type = None
         self.start_date = None
         self.end_date = None
@@ -39,6 +42,10 @@ class CanvasCalendarEvents(CanvasClient):
 
         body = {}
 
+        if self.comments is not None:
+            body['comments'] = self.comments
+        if self.cancel_existing is not None:
+            body['cancel_existing'] = self.cancel_existing
         if self.calendar_context_code is not None:
             body['calendar_event[context_code]'] = self.calendar_context_code
         if self.calendar_title is not None:
@@ -114,3 +121,5 @@ class CanvasCalendarEvents(CanvasClient):
         self.calendar_duplicate_frequency = None
         self.calendar_duplicate_interval = None
         self.calendar_duplicate_append_iterator = None
+        self.comments = None
+        self.cancel_existing = None

@@ -1109,6 +1109,24 @@ class CanvasCalendarEvents(CanvasClient):
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
+        pprint(request)
+
+    def reverse_time_slot(self):
+
+        url = self.base_url + '/api/v1/calendar_events/{}/reservations'.format(self.client.CanvasCalendarEvents.calendar_event_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCalendarEvents.generate_queries())
+
+        pprint(request)
+
+    def reverse_time_slot_participant_id(self):
+
+        url = self.base_url + '/api/v1/calendar_events/{}/reservations/{}'.format(self.client.CanvasCalendarEvents.calendar_event_id,self.client.CanvasCalendarEvents.participant_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCalendarEvents.generate_queries())
+
+        pprint(request)
+
 
 
 
