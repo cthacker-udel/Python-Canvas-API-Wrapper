@@ -1175,6 +1175,14 @@ class CanvasCollaborations(CanvasClient):
         self.client = client
         self.base_url = 'https://{}'.format(self.install_url)
 
+    def list_collaborations_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/collaborations'.format(self.client.CanvasCollaboration.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
     def list_collaboration_members(self):
 
         url = self.base_url + '/api/v1/collaborations/{}/members'.format(self.client.CanvasCollaboration.collaboration_id)
