@@ -1144,6 +1144,14 @@ class CanvasCalendarEvents(CanvasClient):
 
         pprint(request)
 
+    def set_course_timetable(self):
+
+        url = self.base_url + '/api/v1/courses/{}/calendar_events/timetable'
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCalendarEvents.generate_queries())
+
+        pprint(request)
+
 
 
 

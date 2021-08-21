@@ -1,5 +1,6 @@
 from CanvasClient import CanvasClient
 
+
 class CanvasCalendarEvents(CanvasClient):
 
     def __init__(self):
@@ -39,10 +40,26 @@ class CanvasCalendarEvents(CanvasClient):
         self.calendar_duplicate_append_iterator = None
         self.cancel_reason = None
 
+        self.timetables_course_section_id = None
+        self.timetables_course_section_id_weekdays = None
+        self.timetables_course_section_id_start_time = None
+        self.timetables_course_section_id_end_time = None
+        self.timetables_course_section_id_location_name = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.timetables_course_section_id is not None:
+            body['timetables[course_section_id][]'] = self.timetables_course_section_id
+        if self.timetables_course_section_id_weekdays is not None:
+            body['timetables[course_section_id][][weekdays]'] = self.timetables_course_section_id_weekdays
+        if self.timetables_course_section_id_start_time is not None:
+            body['timetables[course_section_id][][start_time]'] = self.timetables_course_section_id_start_time
+        if self.timetables_course_section_id_end_time is not None:
+            body['timetables[course_section_id][][end_time]'] = self.timetables_course_section_id_weekdays
+        if self.timetables_course_section_id_location_name is not None:
+            body['timetables[course_section_id][][location_name]'] = self.timetables_course_section_id_location_name
         if self.cancel_reason is not None:
             body['cancel_reason'] = self.cancel_reason
         if self.comments is not None:
@@ -126,3 +143,9 @@ class CanvasCalendarEvents(CanvasClient):
         self.calendar_duplicate_append_iterator = None
         self.comments = None
         self.cancel_existing = None
+        self.timetables_course_section_id = None
+        self.timetables_course_section_id_weekdays = None
+        self.timetables_course_section_id_start_time = None
+        self.timetables_course_section_id_end_time = None
+        self.timetables_course_section_id_location_name = None
+        self.cancel_reason = None
