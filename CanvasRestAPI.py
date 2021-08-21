@@ -1169,6 +1169,21 @@ class CanvasCalendarEvents(CanvasClient):
         pprint(request)
 
 
+class CanvasCollaborations(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_collaboration_members(self):
+
+        url = self.base_url + '/api/v1/collaborations/{}/members'.format(self.client.CanvasCollaboration.collaboration_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCollaboration.generate_queries())
+
+        pprint(request)
+
+
 
 
 
