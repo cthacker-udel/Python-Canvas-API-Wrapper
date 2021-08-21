@@ -46,10 +46,32 @@ class CanvasCalendarEvents(CanvasClient):
         self.timetables_course_section_id_end_time = None
         self.timetables_course_section_id_location_name = None
 
+        self.course_section_id = None
+        self.events = None
+        self.events_start_at = None
+        self.events_end_at = None
+        self.events_location_name = None
+        self.events_code = None
+        self.events_title = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.course_section_id is not None:
+            body['course_section_id'] = self.course_section_id
+        if self.events is not None:
+            body['events[]'] = self.events
+        if self.events_start_at is not None:
+            body['events[][start_at]'] = self.events_start_at
+        if self.events_end_at is not None:
+            body['events[][end_at]'] = self.events_end_at
+        if self.events_location_name is not None:
+            body['events[][location_name]'] = self.events_location_name
+        if self.events_code is not None:
+            body['events[][code]'] = self.events_code
+        if self.events_title is not None:
+            body['events[][title]'] = self.events_title
         if self.timetables_course_section_id is not None:
             body['timetables[course_section_id][]'] = self.timetables_course_section_id
         if self.timetables_course_section_id_weekdays is not None:
@@ -149,3 +171,10 @@ class CanvasCalendarEvents(CanvasClient):
         self.timetables_course_section_id_end_time = None
         self.timetables_course_section_id_location_name = None
         self.cancel_reason = None
+        self.course_section_id = None
+        self.events = None
+        self.events_start_at = None
+        self.events_end_at = None
+        self.events_location_name = None
+        self.events_code = None
+        self.events_title = None
