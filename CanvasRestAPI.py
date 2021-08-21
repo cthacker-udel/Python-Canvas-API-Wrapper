@@ -1217,6 +1217,22 @@ class CanvasCollaborations(CanvasClient):
         pprint(request)
 
 
+class CanvasCommunicationMessages(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+
+    def list_comm_messages_for_user(self):
+
+        url = self.base_url + '/api/v1/comm_messages'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCommMessages.generate_queries())
+
+        pprint(request)
+
+
 
 
 
