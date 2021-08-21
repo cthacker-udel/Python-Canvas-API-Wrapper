@@ -6,6 +6,8 @@ class CanvasCollaboration(CanvasClient):
 
         self.include = None
         self.collaboration_id = None
+        self.course_id = None
+        self.group_id = None
 
 
     def generate_queries(self):
@@ -21,3 +23,5 @@ class CanvasCollaboration(CanvasClient):
 
         self.include = None
         self.collaboration_id = None
+        self.course_id = None
+        self.group_id = None

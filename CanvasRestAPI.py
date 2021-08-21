@@ -1183,6 +1183,23 @@ class CanvasCollaborations(CanvasClient):
 
         pprint(request)
 
+    def list_potential_members(self):
+
+        url = self.base_url + '/api/v1/courses/{}/potential_collaborators'.format(self.client.CanvasCollaboration.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
+    def list_potential_members_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/potential_collaborators'.format(self.client.CanvasCollaboration.group_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
