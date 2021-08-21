@@ -1136,6 +1136,14 @@ class CanvasCalendarEvents(CanvasClient):
 
         pprint(request)
 
+    def delete_calendar_event(self):
+
+        url = self.base_url + '/api/v1/calendar_events/{}'.format(self.client.CanvasCalendarEvents.calendar_event_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCalendarEvents.generate_queries())
+
+        pprint(request)
+
 
 
 
