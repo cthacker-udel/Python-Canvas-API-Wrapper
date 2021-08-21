@@ -37,11 +37,14 @@ class CanvasCalendarEvents(CanvasClient):
         self.calendar_duplicate_frequency = None
         self.calendar_duplicate_interval = None
         self.calendar_duplicate_append_iterator = None
+        self.cancel_reason = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.cancel_reason is not None:
+            body['cancel_reason'] = self.cancel_reason
         if self.comments is not None:
             body['comments'] = self.comments
         if self.cancel_existing is not None:
