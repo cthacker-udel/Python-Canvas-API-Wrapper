@@ -1325,6 +1325,14 @@ class CanvasContentExport(CanvasClient):
 
         pprint(request)
 
+    def show_content_export_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/content_exports/{}'.format(self.client.CanvasContentExports.course_id,self.client.CanvasContentExports.content_export_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
