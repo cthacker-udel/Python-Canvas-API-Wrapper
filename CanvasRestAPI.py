@@ -1248,6 +1248,14 @@ class CanvasCommunicationMessages(CanvasClient):
 
         pprint(request)
 
+    def delete_communication_channel_v2(self):
+
+        url = self.base_url + '/api/v1/users/{}/communication_channels/{}/{}'.format(self.client.CanvasCommMessages.user_id,self.client.CanvasCommMessages.communication_channel_type,self.client.CanvasCommMessages.communication_channel_address)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCommMessages.generate_queries())
+
+        pprint(request)
+
 
 
 

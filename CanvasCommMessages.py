@@ -8,6 +8,7 @@ class CanvasCommMessages(CanvasClient):
         self.start_time = None
         self.end_time = None
         self.communication_channel_id = None
+        self.communication_channel_type = None
 
         self.communication_channel_address = None
         self.communication_channel_type = None
