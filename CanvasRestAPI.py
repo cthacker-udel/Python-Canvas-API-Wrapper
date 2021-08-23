@@ -1295,6 +1295,36 @@ class CanvasConference(CanvasClient):
 
         pprint(request)
 
+class CanvasContentExport(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def list_content_exports_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/content_exports'.format(self.client.CanvasContentExports.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def list_content_exports_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/content_exports'.format(self.client.CanvasContentExports.group_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def list_content_exports_user_id(self):
+
+        url = self.base_url + '/api/v1/users/{}/content_exports'.format(self.client.CanvasContentExports.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
