@@ -1232,6 +1232,14 @@ class CanvasCommunicationMessages(CanvasClient):
 
         pprint(request)
 
+    def create_communication_channel(self):
+
+        url = self.base_url + '/api/v1/users/{}/communication_channels'.format(self.client.CanvasCommMessages.user_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCommMessages.generate_queries())
+
+        pprint(request)
+
 
 
 
