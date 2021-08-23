@@ -1265,6 +1265,21 @@ class CanvasCommunicationMessages(CanvasClient):
         pprint(request)
 
 
+class CanvasConference(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def list_conferences_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/conferences'.format(self.client.CanvasConferences.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
 
 
 
