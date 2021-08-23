@@ -1256,6 +1256,14 @@ class CanvasCommunicationMessages(CanvasClient):
 
         pprint(request)
 
+    def delete_push_notification_endpoint(self):
+
+        url = self.base_url + '/api/v1/users/self/communication_channels/push'
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
