@@ -1287,6 +1287,14 @@ class CanvasConference(CanvasClient):
 
         pprint(request)
 
+    def list_conferences_current_user(self):
+
+        url = self.base_url + '/api/v1/conferences'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
