@@ -7,6 +7,7 @@ class CanvasCommMessages(CanvasClient):
         self.user_id = None
         self.start_time = None
         self.end_time = None
+        self.communication_channel_id = None
 
         self.communication_channel_address = None
         self.communication_channel_type = None
@@ -43,3 +44,4 @@ class CanvasCommMessages(CanvasClient):
         self.communication_channel_type = None
         self.communication_channel_token = None
         self.skip_confirmation = None
+        self.communication_channel_id = None
