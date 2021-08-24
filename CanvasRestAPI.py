@@ -1357,6 +1357,14 @@ class CanvasContentExport(CanvasClient):
 
         pprint(request)
 
+    def export_content_group_id(self):
+
+        url = self.base_url = '/api/v1/groups/{}/content_exports'.format(self.client.CanvasContentExports.group_id)
+
+        request = requests.post(url,headers={'Authorization {}'.fomrat(self.token)},json=self.client.CanvasContentExports.generate_queries())
+
+        pprint(request)
+
 
 
 
