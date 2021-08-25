@@ -1412,6 +1412,15 @@ class CanvasContentMigration(CanvasClient):
         pprint(request)
 
 
+    def get_migration_issue_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/content_migrations/{}/migration_issues/{}'.format(self.client.CanvasContentMigration.account_id,self.client.CanvasContentMigration.content_migration_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
 
 
 
