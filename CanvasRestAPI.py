@@ -1373,6 +1373,28 @@ class CanvasContentExport(CanvasClient):
 
         pprint(request)
 
+class CanvasContentMigration(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_migration_issues_acocunt_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/content_migrations/{}/migration_issues'.format(self.client.CanvasContentMigration.account_id,self.client.CanvasContentMigration.content_migration_id,self.client.CanvasContentMigration)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def list_migration_issues_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/content_migrations/{}/migration_issues'.format(self.client.CanvasContentMigration.course_id,self.client.CanvasContentMigration.content_migration_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
