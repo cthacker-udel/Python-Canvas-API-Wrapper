@@ -1414,7 +1414,7 @@ class CanvasContentMigration(CanvasClient):
 
     def get_migration_issue_account_id(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/content_migrations/{}/migration_issues/{}'.format(self.client.CanvasContentMigration.account_id,self.client.CanvasContentMigration.content_migration_id)
+        url = self.base_url + '/api/v1/accounts/{}/content_migrations/{}/migration_issues/{}'.format(self.client.CanvasContentMigration.account_id,self.client.CanvasContentMigration.content_migration_id,self.client.CanvasContentMigration.migration_issue_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
@@ -1422,7 +1422,15 @@ class CanvasContentMigration(CanvasClient):
 
     def get_migration_issue_course_id(self):
 
-        url = self.base_url + '/api/v1/courses/{}/content_migrations/{}/migration_issues/{}'.format(self.client.CanvasContentMigration.course_id,self.client.CanvasContentMigration.content_migration_id)
+        url = self.base_url + '/api/v1/courses/{}/content_migrations/{}/migration_issues/{}'.format(self.client.CanvasContentMigration.course_id,self.client.CanvasContentMigration.content_migration_id,self.client.CanvasContentMigration.migration_issue_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_migration_issue_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/content_migrations/{}/migration_issues/{}'.format(self.client.CanvasContentMigration.course_id,self.client.CanvasContentMigration.content_migration_id,self.client.CanvasContentMigration.migration_issue_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
