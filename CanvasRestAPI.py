@@ -1773,17 +1773,17 @@ class CanvasContentMigration(CanvasClient):
 
         pprint(request)
 
-    def list_items_for_selective_import_account_id(self):
+    def list_items_for_selective_import_group_id(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/content_migrations/{}/selective_data'.format(self.client.CanvasContentMigration.account_id,self.client.CanvasContentMigration.content_migration_id)
+        url = self.base_url + '/api/v1/groups/{}/content_migrations/{}/selective_data'.format(self.client.CanvasContentMigration.group_id,self.client.CanvasContentMigration.content_migration_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasContentMigration.generate_queries())
 
         pprint(request)
 
-    def list_items_for_selective_import_account_id(self):
+    def list_items_for_selective_import_user_id(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/content_migrations/{}/selective_data'.format(self.client.CanvasContentMigration.account_id,self.client.CanvasContentMigration.content_migration_id)
+        url = self.base_url + '/api/v1/users/{}/content_migrations/{}/selective_data'.format(self.client.CanvasContentMigration.user_id,self.client.CanvasContentMigration.content_migration_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasContentMigration.generate_queries())
 
