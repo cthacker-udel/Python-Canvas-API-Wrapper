@@ -1789,6 +1789,20 @@ class CanvasContentMigration(CanvasClient):
 
         pprint(request)
 
+class CanvasContentSecurity(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def get_current_settings_for_account(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/csp_settings'.format(self.client.CanvasContentSecurityPolicySettings.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
