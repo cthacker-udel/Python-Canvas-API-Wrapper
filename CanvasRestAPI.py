@@ -1765,6 +1765,30 @@ class CanvasContentMigration(CanvasClient):
 
         pprint(request)
 
+    def list_items_for_selective_import_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/content_migrations/{}/selective_data'.format(self.client.CanvasContentMigration.course_id,self.client.CanvasContentMigration.content_migration_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasContentMigration.generate_queries())
+
+        pprint(request)
+
+    def list_items_for_selective_import_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/content_migrations/{}/selective_data'.format(self.client.CanvasContentMigration.account_id,self.client.CanvasContentMigration.content_migration_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasContentMigration.generate_queries())
+
+        pprint(request)
+
+    def list_items_for_selective_import_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/content_migrations/{}/selective_data'.format(self.client.CanvasContentMigration.account_id,self.client.CanvasContentMigration.content_migration_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasContentMigration.generate_queries())
+
+        pprint(request)
+
 
 
 
