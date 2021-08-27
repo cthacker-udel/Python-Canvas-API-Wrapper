@@ -1709,6 +1709,14 @@ class CanvasContentMigration(CanvasClient):
 
         pprint(request)
 
+    def update_content_migration_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/content_migrations/{}'.format(self.client.CanvasContentMigration.group_id,self.client.CanvasContentMigration.content_migration_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
