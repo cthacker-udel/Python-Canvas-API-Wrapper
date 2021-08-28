@@ -1899,6 +1899,14 @@ class CanvasContentShare(CanvasClient):
 
         pprint(request)
 
+    def get_unread_shares_count(self):
+
+        url = self.base_url + '/api/v1/users/{}/content_shares/unread_count'.format(self.client.CanvasContentExports.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
