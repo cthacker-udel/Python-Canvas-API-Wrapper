@@ -1851,6 +1851,14 @@ class CanvasContentSecurity(CanvasClient):
 
         pprint(request)
 
+    def retrieve_reported_csp_violations_for_account(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/csp_log'.format(self.client.CanvasContentSecurityPolicySettings.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
