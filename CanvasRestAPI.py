@@ -1827,6 +1827,14 @@ class CanvasContentSecurity(CanvasClient):
 
         pprint(request)
 
+    def lock_or_unlock_csp_setting_account_and_courses(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/csp_settings/lock'.format(self.client.CanvasContentSecurityPolicySettings.account_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasContentSecurityPolicySettings.generate_queries())
+
+        pprint(request)
+
 
 
 
