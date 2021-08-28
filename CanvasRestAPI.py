@@ -1819,6 +1819,14 @@ class CanvasContentSecurity(CanvasClient):
 
         pprint(request)
 
+    def enable_or_disable_or_clear_csp_setting_for_account(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/csp_settings'.format(self.client.CanvasContentSecurityPolicySettings.account_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
