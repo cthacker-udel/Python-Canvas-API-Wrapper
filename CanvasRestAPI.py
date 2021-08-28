@@ -1797,9 +1797,17 @@ class CanvasContentSecurity(CanvasClient):
 
     def get_current_settings_for_account(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/csp_settings'.format(self.client.CanvasContentSecurityPolicySettings.course_id)
+        url = self.base_url + '/api/v1/accounts/{}/csp_settings'.format(self.client.CanvasContentSecurityPolicySettings.account_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_current_settings_for_course(self):
+
+        url = self.base_url + '/api/v1/courses/{}/csp_settings'.format(self.client.CanvasContentSecurityPolicySettings.course_id)
+
+        request = requests.get(url,headers={'Authorization'.format(self.token)})
 
         pprint(request)
 
