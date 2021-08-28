@@ -1883,6 +1883,14 @@ class CanvasContentShare(CanvasClient):
 
         pprint(request)
 
+    def list_content_shares_user_id(self):
+
+        url = self.base_url + '/api/v1/users/{}/content_shares/sent'.format(self.client.CanvasContentExports.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
