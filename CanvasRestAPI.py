@@ -1843,6 +1843,14 @@ class CanvasContentSecurity(CanvasClient):
 
         pprint(request)
 
+    def add_multiple_domains_to_account(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/csp_settings/domains/batch_create'.format(self.client.CanvasContentSecurityPolicySettings.account_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasContentSecurityPolicySettings.generate_queries())
+
+        pprint(request)
+
 
 
 
