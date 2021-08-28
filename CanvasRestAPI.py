@@ -1868,6 +1868,22 @@ class CanvasContentSecurity(CanvasClient):
         pprint(request)
 
 
+class CanvasContentShare(CanvasClient):
+
+    def __init__(self,client):
+
+        self.base_url + 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def create_content_share(self):
+
+        url = self.base_url + '/api/v1/users/{}/content_shares'.format(self.client.CanvasContentShares.user_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasContentShares.generate_queries())
+
+        pprint(request)
+
+
 
 
 
