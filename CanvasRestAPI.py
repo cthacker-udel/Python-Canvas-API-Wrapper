@@ -1859,6 +1859,14 @@ class CanvasContentSecurity(CanvasClient):
 
         pprint(request)
 
+    def remove_domain_from_account(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/csp_settings/domains'.format(self.client.CanvasContentSecurityPolicySettings.account_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
