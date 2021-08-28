@@ -1915,6 +1915,14 @@ class CanvasContentShare(CanvasClient):
 
         pprint(request)
 
+    def remove_content_share(self):
+
+        url = self.base_url + '/api/v1/users/{}/content_shares/{}'.format(self.client.CanvasContentExports.user_id,self.client.CanvasContentExports.content_export_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
