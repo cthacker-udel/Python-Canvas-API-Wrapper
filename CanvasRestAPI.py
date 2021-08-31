@@ -2048,3 +2048,11 @@ class CanvasConversations(CanvasClient):
         request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasConversations.generate_queries())
 
         pprint(request)
+
+    def add_message(self):
+
+        url = self.base_url + '/api/v1/conversations/{}/add_message'.format(self.client.CanvasConversations.conversation_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasConversations.generate_queries())
+
+        pprint(request)
