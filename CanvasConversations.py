@@ -33,13 +33,15 @@ class CanvasConversations(CanvasClient):
         self.conversation_starred = None
 
         self.included_messages = None
-
+        self.remove = None
 
 
     def generate_queries(self):
 
         body = {}
 
+        if self.remove is not None:
+            body['remove'] = self.remove
         if self.included_messages is not None:
             body['included_messages[]'] = self.included_messages
         if self.auto_mark_as_read is not None:
@@ -101,3 +103,5 @@ class CanvasConversations(CanvasClient):
         self.context_code = None
         self.auto_mark_as_read = None
         self.conversation_id = None
+        self.remove = None
+        self.included_messages = None
