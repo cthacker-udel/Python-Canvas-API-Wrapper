@@ -1927,7 +1927,15 @@ class CanvasContentShare(CanvasClient):
 
         url = self.base_url + '/api/v1/users/{}/content_shares/{}/add_users'.format(self.client.CanvasContentShares.user_id,self.client.CanvasContentShares.content_share_id)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.client)})
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def update_content_share(self):
+
+        url = self.base_url + '/api/v1/users/{}/content_shares/{}'.format(self.client.CanvasContentShares.user_id,self.client.CanvasContentShares.content_share_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasContentShares.generate_queries())
 
         pprint(request)
 
