@@ -1940,6 +1940,22 @@ class CanvasContentShare(CanvasClient):
         pprint(request)
 
 
+class CanvasConversations(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_conversations(self):
+
+        url = self.base_url + '/api/v1/conversations'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasConversations.generate_queries())
+
+        pprint(request)
+
+
+
 
 
 
