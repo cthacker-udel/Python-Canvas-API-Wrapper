@@ -2056,3 +2056,11 @@ class CanvasConversations(CanvasClient):
         request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasConversations.generate_queries())
 
         pprint(request)
+
+    def delete_message(self):
+
+        url = self.base_url + '/api/v1/conversations/{}/remove_messages'.foramt(self.client.CanvasConversations.conversation_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasConversations.generate_queries())
+
+        pprint(request)
