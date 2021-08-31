@@ -1994,6 +1994,14 @@ class CanvasConversations(CanvasClient):
 
         pprint(request)
 
+    def delete_conversation(self):
+
+        url = self.base_url + '/api/v1/conversations/{}'.format(self.client.CanvasConversations.conversation_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
