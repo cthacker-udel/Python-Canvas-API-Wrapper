@@ -32,11 +32,16 @@ class CanvasConversations(CanvasClient):
         self.conversation_subscribed = None
         self.conversation_starred = None
 
+        self.included_messages = None
+
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.included_messages is not None:
+            body['included_messages[]'] = self.included_messages
         if self.auto_mark_as_read is not None:
             body['auto_mark_as_read'] = self.auto_mark_as_read
         if self.recipients is not None:
