@@ -1954,6 +1954,14 @@ class CanvasConversations(CanvasClient):
 
         pprint(request)
 
+    def create_conversation(self):
+
+        url = self.base_url + '/api/v1/conversations'
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasConversations.generate_queries())
+
+        pprint(request)
+
 
 
 
