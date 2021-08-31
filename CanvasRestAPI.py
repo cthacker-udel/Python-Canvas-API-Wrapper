@@ -1986,6 +1986,14 @@ class CanvasConversations(CanvasClient):
 
         pprint(request)
 
+    def mark_all_as_read(self):
+
+        url = self.base_url + '/api/v1/conversations/mark_all_as_read'
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
