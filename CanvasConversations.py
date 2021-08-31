@@ -28,6 +28,10 @@ class CanvasConversations(CanvasClient):
 
         self.auto_mark_as_read = None
 
+        self.conversation_workflow_state = None
+        self.conversation_subscribed = None
+        self.conversation_starred = None
+
 
     def generate_queries(self):
 

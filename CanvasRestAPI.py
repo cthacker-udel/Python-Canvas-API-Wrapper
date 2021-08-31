@@ -1978,6 +1978,14 @@ class CanvasConversations(CanvasClient):
 
         pprint(request)
 
+    def edit_conversation(self):
+
+        url = self.base_url + '/api/v1/conversations/{}'.format(self.token)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasConversations.generate_queries())
+
+        pprint(request)
+
 
 
 
