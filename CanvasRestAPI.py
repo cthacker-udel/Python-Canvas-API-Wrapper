@@ -1885,7 +1885,7 @@ class CanvasContentShare(CanvasClient):
 
     def list_content_shares_sent(self):
 
-        url = self.base_url + '/api/v1/users/{}/content_shares/sent'.format(self.client.CanvasContentExports.user_id)
+        url = self.base_url + '/api/v1/users/{}/content_shares/sent'.format(self.client.CanvasContentShares.user_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
@@ -1893,7 +1893,7 @@ class CanvasContentShare(CanvasClient):
 
     def list_content_shares_received(self):
 
-        url = self.base_url + '/api/v1/users/{}/content_shares/received'.format(self.client.CanvasContentExports.user_id)
+        url = self.base_url + '/api/v1/users/{}/content_shares/received'.format(self.client.CanvasContentShares.user_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
@@ -1901,7 +1901,7 @@ class CanvasContentShare(CanvasClient):
 
     def get_unread_shares_count(self):
 
-        url = self.base_url + '/api/v1/users/{}/content_shares/unread_count'.format(self.client.CanvasContentExports.user_id)
+        url = self.base_url + '/api/v1/users/{}/content_shares/unread_count'.format(self.client.CanvasContentShares.user_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
@@ -1909,7 +1909,7 @@ class CanvasContentShare(CanvasClient):
 
     def get_content_share(self):
 
-        url = self.base_url + '/api/v1/users/{}/content_shares/{}'.format(self.client.CanvasContentExports.user_id,self.client.CanvasContentExports.content_export_id)
+        url = self.base_url + '/api/v1/users/{}/content_shares/{}'.format(self.client.CanvasContentShares.user_id,self.client.CanvasContentShares.content_export_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
@@ -1917,12 +1917,19 @@ class CanvasContentShare(CanvasClient):
 
     def remove_content_share(self):
 
-        url = self.base_url + '/api/v1/users/{}/content_shares/{}'.format(self.client.CanvasContentExports.user_id,self.client.CanvasContentExports.content_export_id)
+        url = self.base_url + '/api/v1/users/{}/content_shares/{}'.format(self.client.CanvasContentShares.user_id,self.client.CanvasContentShares.content_export_id)
 
         request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
+    def add_user_to_content_share(self):
+
+        url = self.base_url + '/api/v1/users/{}/content_shares/{}/add_users'.format(self.client.CanvasContentShares.user_id,self.client.CanvasContentShares.content_share_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.client)})
+
+        pprint(request)
 
 
 
