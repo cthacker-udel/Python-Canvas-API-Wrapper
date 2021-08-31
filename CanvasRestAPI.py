@@ -2064,3 +2064,19 @@ class CanvasConversations(CanvasClient):
         request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasConversations.generate_queries())
 
         pprint(request)
+
+    def batch_update_conversations(self):
+
+        url = self.base_url + '/api/v1/conversations'
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasConversations.generate_queries())
+
+        pprint(request)
+
+    def find_recipients(self):
+
+        url = self.base_url + '/api/v1/conversations/find_recipients'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
