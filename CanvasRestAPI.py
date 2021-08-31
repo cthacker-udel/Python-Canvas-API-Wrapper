@@ -2088,3 +2088,17 @@ class CanvasConversations(CanvasClient):
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
+
+class CanvasCourseAuditLog(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def query_by_account(self):
+
+        url = self.base_url + '/api/v1/audit/course/accounts/{}'.format(self.client.CanvasAccount.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourseAuditLog.account_id)
+
+        pprint(request)
