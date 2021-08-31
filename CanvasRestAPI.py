@@ -2102,3 +2102,11 @@ class CanvasCourseAuditLog(CanvasClient):
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourseAuditLog.account_id)
 
         pprint(request)
+
+    def query_by_course(self):
+
+        url = self.base_url + '/api/v1/audit/course/courses/{}'.format(self.client.CanvasCourseAuditLog.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourseAuditLog.generate_queries())
+
+        pprint(request)
