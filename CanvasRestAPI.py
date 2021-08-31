@@ -2080,3 +2080,11 @@ class CanvasConversations(CanvasClient):
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
+
+    def unread_count(self):
+
+        url = self.base_url + '/api/v1/conversations/unread_count'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
