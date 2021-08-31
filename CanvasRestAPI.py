@@ -1962,6 +1962,14 @@ class CanvasConversations(CanvasClient):
 
         pprint(request)
 
+    def get_running_batches(self):
+
+        url = self.base_url + '/api/v1/conversations/batches'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
