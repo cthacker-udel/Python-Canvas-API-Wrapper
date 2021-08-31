@@ -1970,6 +1970,14 @@ class CanvasConversations(CanvasClient):
 
         pprint(request)
 
+    def get_single_conversation(self):
+
+        url = self.base_url + '/api/v1/conversations/{}'.format(self.client.CanvasConversations.conversation_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasConversations.generate_queries())
+
+        pprint(request)
+
 
 
 

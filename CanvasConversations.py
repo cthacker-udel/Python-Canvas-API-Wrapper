@@ -5,6 +5,8 @@ class CanvasConversations(CanvasClient):
 
     def __init__(self):
 
+        self.conversation_id = None
+
         self.scope = None
         self.filter = None
         self.filter_mode = None
@@ -24,11 +26,15 @@ class CanvasConversations(CanvasClient):
         self.mode = None
         self.context_code = None
 
+        self.auto_mark_as_read = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.auto_mark_as_read is not None:
+            body['auto_mark_as_read'] = self.auto_mark_as_read
         if self.recipients is not None:
             body['recipients'] = self.recipients
         if self.subject is not None:
@@ -84,3 +90,5 @@ class CanvasConversations(CanvasClient):
         self.user_note = None
         self.mode = None
         self.context_code = None
+        self.auto_mark_as_read = None
+        self.conversation_id = None
