@@ -2110,3 +2110,5 @@ class CanvasCourseAuditLog(CanvasClient):
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourseAuditLog.generate_queries())
 
         pprint(request)
+
+
