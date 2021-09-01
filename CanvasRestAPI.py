@@ -2125,6 +2125,20 @@ class CanvasCourseQuizExtensions(CanvasClient):
 
         pprint(request)
 
+class CanvasCourses(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_courses(self):
+
+        url = self.base_url + '/api/v1/courses'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourses.generate_queries())
+
+        pprint(request)
+
 
 
 
