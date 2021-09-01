@@ -2111,4 +2111,20 @@ class CanvasCourseAuditLog(CanvasClient):
 
         pprint(request)
 
+class CanvasCourseQuizExtensions(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def set_extensions_for_student_quiz_submissions(self):
+
+        url = self.base_url + '/api/v1/courses/{}/quiz_extensions'.format(self.client.CanvasCourseQuizExtensions.course_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourseQuizExtensions.generate_queries())
+
+        pprint(request)
+
+
+
 
