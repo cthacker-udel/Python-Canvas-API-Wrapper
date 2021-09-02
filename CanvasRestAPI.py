@@ -2155,6 +2155,10 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def create_new_course(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/courses'.format(self.client.CanvasCourses.account_id)
+
 
 
 
