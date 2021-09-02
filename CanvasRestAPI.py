@@ -2147,6 +2147,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def get_user_progress(self):
+
+        url = self.base_url + '/api/v1/courses/{}/users/{}/progress/'.format(self.client.CanvasCourses().course_id,self.client.CanvasCourses.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 

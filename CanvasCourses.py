@@ -5,6 +5,7 @@ class CanvasCourses(CanvasClient):
     def __init__(self):
 
         self.user_id = None
+        self.course_id = None
 
         self.enrollment_type = None
         self.enrollment_role = None
@@ -46,3 +47,4 @@ class CanvasCourses(CanvasClient):
         self.include = None
         self.state = None
         self.user_id = None
+        self.course_id = None
