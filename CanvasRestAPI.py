@@ -2171,6 +2171,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def list_students(self):
+
+        url = self.base_url + '/api/v1/courses/{}/students'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
+
+        pprint(request)
+
 
 
 
