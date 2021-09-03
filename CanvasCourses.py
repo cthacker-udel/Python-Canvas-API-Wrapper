@@ -47,11 +47,16 @@ class CanvasCourses(CanvasClient):
         self.course_format = None
         self.enable_sis_reactivation = None
 
+        self.search_term = None
+        self.sort = None
+        self.enrollment_type_student_list = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.enrollment_type_student_list is not None:
+            body['enrollment_type[]'] = self.enrollment_type_student_list
         if self.enrollment_type is not None:
             body['enrollment_type'] = self.enrollment_type
         if self.enrollment_role is not None:
@@ -171,3 +176,4 @@ class CanvasCourses(CanvasClient):
         self.grade_passback_setting = None
         self.course_format = None
         self.enable_sis_reactivation = None
+        self.enrollment_type_student_list = None
