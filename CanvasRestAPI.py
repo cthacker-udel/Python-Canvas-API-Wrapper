@@ -2163,6 +2163,15 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def upload_file(self):
+
+        url = self.base_url + '/api/v1/courses/{}/files'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
+
+        pprint(request)
+
+
 
 
 
