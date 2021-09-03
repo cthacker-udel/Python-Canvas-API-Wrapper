@@ -2159,6 +2159,8 @@ class CanvasCourses(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/courses'.format(self.client.CanvasCourses.account_id)
 
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
+
 
 
 
