@@ -2211,6 +2211,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def search_for_content_share_users(self):
+
+        url = self.base_url + '/api/v1/courses/{}/content_share_users'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourses.generate_queries())
+
+        pprint(request)
+
 
 
 
