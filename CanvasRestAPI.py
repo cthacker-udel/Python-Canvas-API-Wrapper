@@ -2161,6 +2161,8 @@ class CanvasCourses(CanvasClient):
 
         request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
 
+        pprint(request)
+
 
 
 
