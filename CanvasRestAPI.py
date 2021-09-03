@@ -2219,6 +2219,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def preview_processed_html(self):
+
+        url = self.base_url + '/api/v1/courses/{}/preview_html'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
+
+        pprint(request)
+
 
 
 

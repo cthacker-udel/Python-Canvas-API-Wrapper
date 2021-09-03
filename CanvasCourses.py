@@ -51,10 +51,14 @@ class CanvasCourses(CanvasClient):
         self.sort = None
         self.enrollment_type_student_list = None
 
+        self.html = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.html is not None:
+            body['html'] = self.html
         if self.enrollment_type_student_list is not None:
             body['enrollment_type[]'] = self.enrollment_type_student_list
         if self.enrollment_type is not None:
@@ -177,3 +181,5 @@ class CanvasCourses(CanvasClient):
         self.course_format = None
         self.enable_sis_reactivation = None
         self.enrollment_type_student_list = None
+
+        self.html = None
