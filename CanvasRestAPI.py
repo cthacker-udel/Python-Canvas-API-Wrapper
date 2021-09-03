@@ -2203,6 +2203,16 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def get_single_user(self):
+
+        url = self.base_url + '/api/v1/courses/{}/users/{}'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
+
 
 
 
