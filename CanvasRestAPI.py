@@ -2167,7 +2167,7 @@ class CanvasCourses(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/files'.format(self.client.CanvasCourses.course_id)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
@@ -2175,7 +2175,15 @@ class CanvasCourses(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/students'.format(self.client.CanvasCourses.course_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def list_users_in_course(self):
+
+        url = self.base_url + '/api/v1/courses/{}/users'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourses.generate_queries())
 
         pprint(request)
 
