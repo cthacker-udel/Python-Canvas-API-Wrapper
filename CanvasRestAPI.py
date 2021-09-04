@@ -2227,6 +2227,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def get_course_activity_stream(self):
+
+        url = self.base_url + '/api/v1/courses/{}/activity_stream'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
