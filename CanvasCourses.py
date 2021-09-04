@@ -71,10 +71,14 @@ class CanvasCourses(CanvasClient):
         self.home_page_announcement_limit = None
         self.syllabus_course_summary = None
 
+        self.teacher_limit = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.teacher_limit is not None:
+            body['teacher_limit'] = self.teacher_limit
         if self.allow_student_discussion_topics is not None:
             body['allow_student_discussion_topics'] = self.allow_student_discussion_topics
         if self.allow_student_forum_attachments is not None:
@@ -244,3 +248,4 @@ class CanvasCourses(CanvasClient):
         self.show_announcements_on_home_page = None
         self.home_page_announcement_limit = None
         self.syllabus_course_summary = None
+        self.teacher_limit = None
