@@ -73,10 +73,14 @@ class CanvasCourses(CanvasClient):
 
         self.teacher_limit = None
 
+        self.course_ids = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.course_ids is not None:
+            body['course_ids[]'] = self.course_ids
         if self.teacher_limit is not None:
             body['teacher_limit'] = self.teacher_limit
         if self.allow_student_discussion_topics is not None:

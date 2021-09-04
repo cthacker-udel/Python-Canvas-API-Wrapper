@@ -2287,7 +2287,7 @@ class CanvasCourses(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}'.format(self.client.CanvasCourses.course_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourses.generate_queries())
 
         pprint(request)
 
@@ -2295,11 +2295,25 @@ class CanvasCourses(CanvasClient):
 
         url = self.base_url + '/api/v1/accounts/{}/courses/{}'.format(self.client.CanvasCourses.account_id,self.client.CanvasCourses.course_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourses.generate_queries())
 
         pprint(request)
 
-    def g
+    def update_course(self):
+
+        url = self.base_url + '/api/v1/courses/{}'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
+
+        pprint(request)
+
+    def update_courses(self):
+
+        url = self.base_url + '/api/v1/account/{}/courses'.format(self.client.CanvasCourses.account_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses.generate_queries())
+
+        pprint(request)
 
 
 
