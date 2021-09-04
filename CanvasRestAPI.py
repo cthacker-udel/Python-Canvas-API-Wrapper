@@ -2315,6 +2315,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def reset_course(self):
+
+        url = self.base_url + '/api/v1/courses/{}/reset_content'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
