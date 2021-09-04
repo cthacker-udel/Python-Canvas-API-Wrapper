@@ -2251,6 +2251,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def delete_conclude_course(self):
+
+        url = self.base_url + '/api/v1/courses/{}'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasCourses().generate_queries())
+
+        pprint(request)
+
 
 
 

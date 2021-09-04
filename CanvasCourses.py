@@ -53,10 +53,14 @@ class CanvasCourses(CanvasClient):
 
         self.html = None
 
+        self.event = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.event is not None:
+            body['event'] = self.event
         if self.html is not None:
             body['html'] = self.html
         if self.enrollment_type_student_list is not None:
