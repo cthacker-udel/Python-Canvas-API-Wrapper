@@ -2275,6 +2275,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def return_test_student(self):
+
+        url = self.base_url + '/api/v1/courses/{}/student_view_student'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
