@@ -2229,7 +2229,15 @@ class CanvasCourses(CanvasClient):
 
     def get_course_activity_stream(self):
 
-        url = self.base_url + '/api/v1/courses/{}/activity_stream'
+        url = self.base_url + '/api/v1/courses/{}/activity_stream'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_course_activity_stream_summary(self):
+
+        url = self.base_url + '/api/v1/courses/{}/activity_stream/summary'.format(self.client.CanvasCourses.course_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
