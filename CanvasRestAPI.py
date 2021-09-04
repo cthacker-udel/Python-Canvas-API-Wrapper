@@ -2267,6 +2267,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def update_course_settings(self):
+
+        url = self.base_url + '/api/v1/courses/{}/settings'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
