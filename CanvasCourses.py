@@ -55,10 +55,52 @@ class CanvasCourses(CanvasClient):
 
         self.event = None
 
+        self.allow_student_discussion_topics = None
+        self.allow_student_forum_attachments = None
+        self.allow_student_discussion_editing = None
+        self.allow_student_organized_groups = None
+        self.filter_speed_grader_by_student_group = None
+        self.hide_final_grades = None
+        self.hide_distribution_graphs = None
+        self.hide_sections_on_course_users_page = None
+        self.lock_all_announcements = None
+        self.usage_rights_required = None
+        self.restrict_student_past_view = None
+        self.restrict_student_future_view = None
+        self.show_announcements_on_home_page = None
+        self.home_page_announcement_limit = None
+        self.syllabus_course_summary = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.allow_student_discussion_topics is not None:
+            body['allow_student_discussion_topics'] = self.allow_student_discussion_topics
+        if self.allow_student_forum_attachments is not None:
+            body['allow_student_forum_attachments'] = self.allow_student_forum_attachments
+        if self.allow_student_discussion_editing is not None:
+            body['filter_speed_grader_by_student_group'] = self.filter_speed_grader_by_student_group
+        if self.hide_final_grades is not None:
+            body['hide_final_grades'] = self.hide_final_grades
+        if self.hide_distribution_graphs is not None:
+            body['hide_distribution_graphs'] = self.hide_distribution_graphs
+        if self.hide_sections_on_course_users_page is not None:
+            body['hide_sections_on_course_users_page'] = self.hide_sections_on_course_users_page
+        if self.lock_all_announcements is not None:
+            body['lock_all_announcements'] = self.lock_all_announcements
+        if self.usage_rights_required is not None:
+            body['usage_rights_required'] = self.usage_rights_required
+        if self.restrict_student_past_view is not None:
+            body['restrict_student_past_view'] = self.restrict_student_past_view
+        if self.restrict_student_future_view is not None:
+            body['restrict_student_future_view'] = self.restrict_student_future_view
+        if self.show_announcements_on_home_page is not None:
+            body['show_announcements_on_home_page'] = self.show_announcements_on_home_page
+        if self.home_page_announcement_limit is not None:
+            body['home_page_announcement_limit'] = self.home_page_announcement_limit
+        if self.syllabus_course_summary is not None:
+            body['syllabus_course_summary'] = self.syllabus_course_summary
         if self.event is not None:
             body['event'] = self.event
         if self.html is not None:
@@ -187,3 +229,18 @@ class CanvasCourses(CanvasClient):
         self.enrollment_type_student_list = None
 
         self.html = None
+        self.allow_student_discussion_topics = None
+        self.allow_student_forum_attachments = None
+        self.allow_student_discussion_editing = None
+        self.allow_student_organized_groups = None
+        self.filter_speed_grader_by_student_group = None
+        self.hide_final_grades = None
+        self.hide_distribution_graphs = None
+        self.hide_sections_on_course_users_page = None
+        self.lock_all_announcements = None
+        self.usage_rights_required = None
+        self.restrict_student_past_view = None
+        self.restrict_student_future_view = None
+        self.show_announcements_on_home_page = None
+        self.home_page_announcement_limit = None
+        self.syllabus_course_summary = None
