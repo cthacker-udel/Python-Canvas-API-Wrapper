@@ -2243,6 +2243,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def get_course_todo_items(self):
+
+        url = self.base_url + '/api/v1/courses/{}/todo'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
