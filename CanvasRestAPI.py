@@ -2363,6 +2363,20 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+class CanvasCustomGradebook(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_custom_gradebook_columns(self):
+
+        url = self.base_url + '/api/v1/courses/{}/custom_gradebook_columns'.format(self.client.CanvasCustomGradebook.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCustomGradebook.generate_queries())
+
+        pprint(request)
+
 
 
 
