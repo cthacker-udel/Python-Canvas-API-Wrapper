@@ -2323,6 +2323,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def get_effective_due_dates(self):
+
+        url = self.base_url + '/api/v1/courses/{}/effective_due_dates'.format(self.client.CanvasCourses.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
