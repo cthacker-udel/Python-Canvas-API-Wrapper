@@ -7,7 +7,6 @@ class CanvasCourses(CanvasClient):
         self.user_id = None
         self.course_id = None
         self.account_id = None
-
         self.enrollment_type = None
         self.enrollment_role = None
         self.enrollment_role_id = None
@@ -15,7 +14,6 @@ class CanvasCourses(CanvasClient):
         self.exclude_blueprint_courses = None
         self.include = None
         self.state = None
-
         self.course_name = None
         self.course_code = None
         self.course_start_at = None
@@ -46,15 +44,11 @@ class CanvasCourses(CanvasClient):
         self.grade_passback_setting = None
         self.course_format = None
         self.enable_sis_reactivation = None
-
         self.search_term = None
         self.sort = None
         self.enrollment_type_student_list = None
-
         self.html = None
-
         self.event = None
-
         self.allow_student_discussion_topics = None
         self.allow_student_forum_attachments = None
         self.allow_student_discussion_editing = None
@@ -70,21 +64,25 @@ class CanvasCourses(CanvasClient):
         self.show_announcements_on_home_page = None
         self.home_page_announcement_limit = None
         self.syllabus_course_summary = None
-
         self.teacher_limit = None
-
         self.course_ids = None
-
         self.assignment_ids = None
-
         self.permissions = None
-
         self.course_copy_id = None
+        self._except = None
+        self.only = None
+        self.source_course = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.source_course is not None:
+            body['source_course'] = self.source_course
+        if self._except is not None:
+            body['except[]'] = self._except
+        if self.only is not None:
+            body['only[]'] = self.only
         if self.permissions is not None:
             body['permissions[]'] = self.permissions
         if self.assignment_id is not None:
@@ -213,7 +211,6 @@ class CanvasCourses(CanvasClient):
         self.state = None
         self.user_id = None
         self.course_id = None
-
         self.course_name = None
         self.course_code = None
         self.course_start_at = None
@@ -245,7 +242,6 @@ class CanvasCourses(CanvasClient):
         self.course_format = None
         self.enable_sis_reactivation = None
         self.enrollment_type_student_list = None
-
         self.html = None
         self.allow_student_discussion_topics = None
         self.allow_student_forum_attachments = None
@@ -266,3 +262,6 @@ class CanvasCourses(CanvasClient):
         self.assignment_ids = None
         self.permissions = None
         self.course_copy_id = None
+        self._except = None
+        self.only = None
+        self.source_course = None
