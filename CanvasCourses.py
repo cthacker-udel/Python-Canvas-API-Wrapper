@@ -79,6 +79,8 @@ class CanvasCourses(CanvasClient):
 
         self.permissions = None
 
+        self.course_copy_id = None
+
     def generate_queries(self):
 
         body = {}
@@ -263,3 +265,4 @@ class CanvasCourses(CanvasClient):
         self.teacher_limit = None
         self.assignment_ids = None
         self.permissions = None
+        self.course_copy_id = None

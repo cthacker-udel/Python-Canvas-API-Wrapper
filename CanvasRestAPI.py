@@ -2347,6 +2347,14 @@ class CanvasCourses(CanvasClient):
 
         pprint(request)
 
+    def get_course_copy_status(self):
+
+        url = self.base_url + '/api/v1/courses/{}/course_copy/{}'.format(self.client.CanvasCourses.course_id,self.client.CanvasCourses.course_copy_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
