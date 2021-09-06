@@ -2327,6 +2327,14 @@ class CanvasCourses(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/effective_due_dates'.format(self.client.CanvasCourses.course_id)
 
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCourses.generate_queries())
+
+        pprint(request)
+
+    def get_course_permissions(self):
+
+        url = self.base_url + '/api/v1/courses/{}/permissions'.format(self.client.CanvasCourses.course_id)
+
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)

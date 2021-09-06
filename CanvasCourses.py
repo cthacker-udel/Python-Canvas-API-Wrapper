@@ -75,10 +75,18 @@ class CanvasCourses(CanvasClient):
 
         self.course_ids = None
 
+        self.assignment_ids = None
+
+        self.permissions = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.permissions is not None:
+            body['permissions[]'] = self.permissions
+        if self.assignment_id is not None:
+            body['assignment_ids[]'] = self.assignment_ids
         if self.course_ids is not None:
             body['course_ids[]'] = self.course_ids
         if self.teacher_limit is not None:
@@ -253,3 +261,5 @@ class CanvasCourses(CanvasClient):
         self.home_page_announcement_limit = None
         self.syllabus_course_summary = None
         self.teacher_limit = None
+        self.assignment_ids = None
+        self.permissions = None
