@@ -2393,6 +2393,14 @@ class CanvasCustomGradebook(CanvasClient):
 
         pprint(request)
 
+    def delete_custom_gradebook_column(self):
+
+        url = self.base_url + '/api/v1/courses/{}/custom_gradebook_columns/{}'.format(self.client.CanvasCustomGradebook.course_id,self.client.CanvasCustomGradebook.custom_gradebook_column_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
