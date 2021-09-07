@@ -2409,6 +2409,14 @@ class CanvasCustomGradebook(CanvasClient):
 
         pprint(request)
 
+    def list_entries_for_column(self):
+
+        url = self.base_url + '/api/v1/courses/{}/custom_gradebook_columns/{}/data'.format(self.client.CanvasCustomGradebook.course_id,self.client.CanvasCustomGradebook.custom_gradebook_column_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasCustomGradebook.generate_queries())
+
+        pprint(request)
+
 
 
 
