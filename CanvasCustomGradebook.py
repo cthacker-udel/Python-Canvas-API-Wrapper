@@ -8,6 +8,8 @@ class CanvasCustomGradebook(CanvasClient):
 
         self.include_hidden = None
 
+        self.custom_gradebook_column_id = None
+
         self.column_title = None
         self.column_position = None
         self.column_hidden = None
