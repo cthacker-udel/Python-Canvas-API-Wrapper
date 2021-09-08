@@ -2425,6 +2425,20 @@ class CanvasCustomGradebook(CanvasClient):
 
         pprint(request)
 
+class CanvasDiscussionTopic(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_discussion_topics_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/discussion_topics'.format(self.client.CanvasDiscussionTopics.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasDiscussionTopics.generate_queries())
+
+        pprint(request)
+
 
 
 
