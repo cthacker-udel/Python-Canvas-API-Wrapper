@@ -41,10 +41,14 @@ class CanvasDiscussionTopics(CanvasClient):
 
         self.discussion_topic_id = None
 
+        self.order = None
+
     def generate_queries(self):
 
         body = {}
 
+        if self.order is not None:
+            body['order[]'] = self.order
         if self.include is not None:
             body['include'] = self.include
         if self.order_by is not None:
@@ -136,3 +140,4 @@ class CanvasDiscussionTopics(CanvasClient):
         self.rating = None
 
         self.discussion_topic_id = None
+        self.order = None

@@ -2495,6 +2495,21 @@ class CanvasDiscussionTopic(CanvasClient):
 
         pprint(request)
 
+    def reorder_pinned_topics_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/discussion_topics/reorder'.format(self.client.CanvasDiscussionTopics.course_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasDiscussionTopics.generate_queries())
+
+        pprint(request)
+
+    def reorder_pinned_topics_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/discussion_topics/reorder'.format(self.client.CanvasDiscussionTopics.group_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasDiscussionTopics.generate_queries())
+
+        pprint(request)
 
 
 
