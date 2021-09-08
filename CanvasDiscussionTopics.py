@@ -39,6 +39,8 @@ class CanvasDiscussionTopics(CanvasClient):
         self.forced_read_state = None
         self.rating = None
 
+        self.discussion_topic_id = None
+
     def generate_queries(self):
 
         body = {}
@@ -96,3 +98,41 @@ class CanvasDiscussionTopics(CanvasClient):
         if self.specific_sections is not None:
             body['specific_sections'] = self.specific_sections
         return body
+
+    def clear_queries(self):
+        self.course_id = None
+        self.group_id = None
+
+        self.include = None
+        self.order_by = None
+        self.scope = None
+        self.only_announcements = None
+        self.filter_by = None
+        self.search_term = None
+        self.exclude_content_module_locked_topics = None
+
+        self.title = None
+        self.message = None
+        self.discussion_type = None
+        self.published = None
+        self.delayed_post_at = None
+        self.allow_rating = None
+        self.lock_at = None
+        self.podcast_enabled = None
+        self.podcast_has_student_posts = None
+        self.require_initial_post = None
+        self.assignment = None
+        self.is_announcement = None
+        self.pinned = None
+        self.position_after = None
+        self.group_category_id = None
+        self.only_graders_can_rate = None
+        self.sort_by_rating = None
+        self.attachment = None
+        self.specific_sections = None
+
+        self.ids = None
+        self.forced_read_state = None
+        self.rating = None
+
+        self.discussion_topic_id = None
