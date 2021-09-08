@@ -2455,6 +2455,14 @@ class CanvasDiscussionTopic(CanvasClient):
 
         pprint(request)
 
+    def create_new_dicussion_topic_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/discussion_topics'.format(self.client.CanvasDiscussionTopics.group_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasDiscussionTopics.generate_queries())
+
+        pprint(request)
+
 
 
 
