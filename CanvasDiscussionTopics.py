@@ -43,6 +43,8 @@ class CanvasDiscussionTopics(CanvasClient):
 
         self.order = None
 
+        self.entry_id = None
+
     def generate_queries(self):
 
         body = {}
@@ -141,3 +143,4 @@ class CanvasDiscussionTopics(CanvasClient):
 
         self.discussion_topic_id = None
         self.order = None
+        self.entry_id = None
