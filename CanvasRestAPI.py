@@ -2623,5 +2623,19 @@ class CanvasDiscussionTopic(CanvasClient):
 
         pprint(request)
 
+    def post_reply_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/discussion_topics/{}/entries/{}/replies'.format(
+
+            self.client.CanvasDiscussionTopics.course_id,
+            self.client.CanvasDiscussionTopics.discussion_topic_id,
+            self.client.CanvasDiscussionTopics.entry_id
+
+        )
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasDiscussionTopics.generate_queries())
+
+        pprint(request)
+
 
 
