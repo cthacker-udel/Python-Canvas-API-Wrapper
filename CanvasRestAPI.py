@@ -2559,9 +2559,17 @@ class CanvasDiscussionTopic(CanvasClient):
 
         pprint(request)
 
-    def get_full_topic(self):
+    def get_full_topic_course_id(self):
 
         url = self.base_url + '/api/v1/courses/{}/discussion_topics/{}/view'.format(self.client.CanvasDiscussionTopics.course_id,self.client.CanvasDiscussionTopics.discussion_topic_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_full_topic_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/discussion_topics/{}/view'.format(self.client.CanvasDiscussionTopics.group_id,self.client.CanvasDiscussionTopics.discussion_topic_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
