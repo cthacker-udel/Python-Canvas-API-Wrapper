@@ -2693,5 +2693,21 @@ class CanvasDiscussionTopic(CanvasClient):
 
         pprint(request)
 
+    def mark_topic_as_read_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/discussion_topics/{}/read'.format(self.client.CanvasDiscussionTopics.course_id,self.client.CanvasDiscussionTopics.discussion_topic_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def mark_topic_as_read_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/discussion_topics/{}/read'.format(self.client.CanvasDiscussionTopics.group_id,self.client.CanvasDiscussionTopics.discussion_topic_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
