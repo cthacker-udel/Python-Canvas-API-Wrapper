@@ -2709,5 +2709,13 @@ class CanvasDiscussionTopic(CanvasClient):
 
         pprint(request)
 
+    def mark_topic_as_unread(self):
+
+        url = self.base_url + '/api/v1/courses/{}/discussion_topics/{}/read'.format(self.client.CanvasDiscussionTopics.course_id,self.client.CanvasDiscussionTopics.discussion_topic_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
