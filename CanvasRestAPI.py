@@ -2779,4 +2779,12 @@ class CanvasDiscussionTopic(CanvasClient):
 
         pprint(request)
 
+    def mark_entry_as_unread_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/discussion_topics/{}/entries/{}/read'.format(self.client.CanvasDiscussionTopics.group_id,self.client.CanvasDiscussionTopics.discussion_topic_id,self.client.CanvasDiscussionTopics.entry_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasDiscussionTopics.generate_queries())
+
+        pprint(request)
+
 
