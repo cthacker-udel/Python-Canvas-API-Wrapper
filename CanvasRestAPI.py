@@ -2836,4 +2836,18 @@ class CanvasDiscussionTopic(CanvasClient):
 
         pprint(request)
 
+class CanvasEnrollmentTerms(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def create_enrollment_term(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/terms'.format(self.client.CanvasEnrollmentTerm.account_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasEnrollmentTerm.generate_queries())
+
+        pprint(request)
+
 
