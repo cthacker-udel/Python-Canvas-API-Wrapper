@@ -2858,4 +2858,12 @@ class CanvasEnrollmentTerms(CanvasClient):
 
         pprint(request)
 
+    def delete_enrollment_term(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/terms/{}'.format(self.client.CanvasEnrollmentTerm.account_id,self.client.CanvasEnrollmentTerm.term_id)
+
+        request = requests.delete(url,headers={"Authorization {}".format(self.token)})
+
+        pprint(request)
+
 
