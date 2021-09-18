@@ -8,6 +8,7 @@ class CanvasEnrollment(CanvasClient):
         self.section_id = None
         self.user_id = None
         self.enrollment_id = None
+        self.account_id = None
 
         self.type = None
         self.role = None
@@ -20,11 +21,14 @@ class CanvasEnrollment(CanvasClient):
         self.sis_section_id = None
         self.sis_user_id = None
         self.created_for_sis_id = None
+        self.id = None
 
     def generate_queries(self):
 
         body = {}
 
+        if self.id is not None:
+            body['id'] = self.id
         if self.type is not None:
             body['type[]'] = self.type
         if self.role is not None:
@@ -69,3 +73,5 @@ class CanvasEnrollment(CanvasClient):
         self.sis_section_id = None
         self.sis_user_id = None
         self.created_for_sis_id = None
+        self.id = None
+        self.account_id = None
