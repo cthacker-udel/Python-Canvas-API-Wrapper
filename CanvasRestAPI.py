@@ -2850,4 +2850,12 @@ class CanvasEnrollmentTerms(CanvasClient):
 
         pprint(request)
 
+    def update_enrollment_term(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/terms/{}'.format(self.client.CanvasEnrollmentTerm.account_id,self.client.CanvasEnrollmentTerm.term_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasEnrollmentTerm.generate_queries())
+
+        pprint(request)
+
 
