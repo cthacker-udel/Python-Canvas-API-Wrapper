@@ -2882,4 +2882,27 @@ class CanvasEnrollmentTerms(CanvasClient):
 
         pprint(request)
 
+class CanvasEnrollments(CanvasClient):
+
+    def __init__(self,client):
+
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def list_enrollments_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/enrollments'.format(self.client.CanvasEnrollment.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasEnrollment.generate_queries())
+
+        pprint(request)
+
+    def list_enrollments_section_id(self):
+
+        url = self.base_url + '/api/v1/sections/{}/enrollments'.format(self.client.CanvasEnrollment.section_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasEnrollment.generate_queries())
+
+        pprint(request)
+
 
