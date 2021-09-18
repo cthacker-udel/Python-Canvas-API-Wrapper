@@ -2874,4 +2874,12 @@ class CanvasEnrollmentTerms(CanvasClient):
 
         pprint(request)
 
+    def retrieve_enrollment_term(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/terms/{}'.format(self.client.CanvasEnrollmentTerm.account_id,self.client.CanvasEnrollmentTerm.term_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
