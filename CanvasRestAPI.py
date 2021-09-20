@@ -2921,4 +2921,12 @@ class CanvasEnrollments(CanvasClient):
 
         pprint(request)
 
+    def enroll_user_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/enrollments'.format(self.client.CanvasEnrollment.course_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasEnrollment.generate_queries())
+
+        pprint(request)
+
 
