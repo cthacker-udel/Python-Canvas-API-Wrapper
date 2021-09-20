@@ -23,6 +23,20 @@ class CanvasEnrollment(CanvasClient):
         self.created_for_sis_id = None
         self.id = None
 
+        self.enrollment_start_at = None
+        self.enrollment_end_at = None
+        self.enrollment_user_id = None
+        self.enrollment_type = None
+        self.enrollment_role = None
+        self.enrollment_role_id = None
+        self.enrollment_state = None
+        self.enrollment_course_section_id = None
+        self.enrollment_limit_privileges_to_section = None
+        self.enrollment_notify = None
+        self.enrollment_code = None
+        self.enrollment_self_enrolled = None
+        self.enrollment_associated_user_id = None
+
     def generate_queries(self):
 
         body = {}
@@ -53,6 +67,32 @@ class CanvasEnrollment(CanvasClient):
             body['sis_user_id[]'] = self.sis_user_id
         if self.created_for_sis_id is not None:
             body['created_for_sis_id[]'] = self.created_for_sis_id
+        if self.enrollment_start_at is not None:
+            body['enrollment[start_at]'] = self.enrollment_start_at
+        if self.enrollment_end_at is not None:
+            body['enrollment[end_at]'] = self.enrollment_end_at
+        if self.enrollment_user_id is not None:
+            body['enrollment[user_id]'] = self.enrollment_user_id
+        if self.enrollment_type is not None:
+            body['enrollment[type]'] = self.enrollment_type
+        if self.enrollment_role is not None:
+            body['enrollment[role]'] = self.enrollment_role
+        if self.enrollment_role_id is not None:
+            body['enrollment[role_id]'] = self.enrollment_role_id
+        if self.enrollment_state is not None:
+            body['enrollment[enrollment_state]'] = self.enrollment_state
+        if self.enrollment_course_section_id is not None:
+            body['enrollment[course_section_id]'] = self.enrollment_course_section_id
+        if self.enrollment_limit_privileges_to_section is not None:
+            body['enrollment[limit_privileges_to_course_section]'] = self.enrollment_limit_privileges_to_section
+        if self.enrollment_notify is not None:
+            body['enrollment[notify]'] = self.enrollment_notify
+        if self.enrollment_code is not None:
+            body['enrollment[self_enrollment_code]'] = self.enrollment_code
+        if self.enrollment_self_enrolled is not None:
+            body['enrollment[self_enrolled]'] = self.enrollment_self_enrolled
+        if self.enrollment_associated_user_id is not None:
+            body['enrollment[associated_user_id]']= self.enrollment_associated_user_id
         return body
 
     def clear_queries(self):
