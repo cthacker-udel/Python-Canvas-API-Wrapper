@@ -2982,7 +2982,7 @@ class CanvasErrReport(CanvasClient):
 
     def __init__(self,client):
 
-        self.base_url = 'https://{}'.format(self.base_url)
+        self.base_url = 'https://{}'.format(self.install_url)
 
         self.client = client
 
@@ -2991,6 +2991,21 @@ class CanvasErrReport(CanvasClient):
         url = self.base_url + '/api/v1/error_reports'
 
         request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasErrorReport.generate_queries())
+
+        pprint(request)
+
+
+class CanvasExternalTool(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def list_external_tools(self):
+
+        url = self.base_url + '/api/v1/courses/{}/external_tools'.format(self.client.CanvasExternalTools.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasExternalTools.generate_queries())
 
         pprint(request)
 
