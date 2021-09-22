@@ -2962,3 +2962,11 @@ class CanvasEnrollments(CanvasClient):
 
         pprint(request)
 
+    def reactivate_enrollment(self):
+
+        url = self.base_url + '/api/v1/courses/{}/enrollments/{}/reactivate'.format(self.client.CanvasEnrollment.course_id,self.client.CanvasEnrollment.enrollment_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
