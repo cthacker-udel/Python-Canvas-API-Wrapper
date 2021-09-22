@@ -2970,3 +2970,11 @@ class CanvasEnrollments(CanvasClient):
 
         pprint(request)
 
+    def add_last_attended_date(self):
+
+        url = self.base_url + '/api/v1/courses/{}/users/{}/last_attended'.format(self.client.CanvasEnrollment.course_id,self.client.CanvasEnrollment.user_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
