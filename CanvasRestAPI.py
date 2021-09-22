@@ -2938,3 +2938,27 @@ class CanvasEnrollments(CanvasClient):
         pprint(request)
 
 
+    def conclude_deactivate_delete_enrollment(self):
+
+        url = self.base_url + '/api/v1/courses/{}/enrollments/{}/'.format(self.client.CanvasEnrollment.course_id,self.client.CanvasEnrollment.enrollment_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasEnrollment.generate_queries())
+
+        pprint(request)
+
+    def accept_course_invite(self):
+
+        url = self.base_url + '/api/v1/courses/{}/enrollments/{}/accpet'.format(self.client.CanvasEnrollment.course_id,self.client.CanvasEnrollment.enrollment_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.client)})
+
+        pprint(request)
+
+    def reject_course_invitation(self):
+
+        url = self.base_url + '/api/v1/courses/{}/enrollments/{}/reject'.format(self.client.CanvasEnrollment.course_id,self.client.CanvasEnrollment.enrollment_id)
+
+        request = requests.post(url,headers={"Authorization {}".format(self.token)})
+
+        pprint(request)
+
