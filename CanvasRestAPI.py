@@ -2978,3 +2978,20 @@ class CanvasEnrollments(CanvasClient):
 
         pprint(request)
 
+class CanvasErrReport(CanvasClient):
+
+    def __init__(self,client):
+
+        self.base_url = 'https://{}'.format(self.base_url)
+
+        self.client = client
+
+    def create_error_report(self):
+
+        url = self.base_url + '/api/v1/error_reports'
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasErrorReport.generate_queries())
+
+        pprint(request)
+
+
