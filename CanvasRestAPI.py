@@ -3033,4 +3033,12 @@ class CanvasExternalTool(CanvasClient):
 
         pprint(request)
 
+    def get_sessionless_launch_url_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/external_tools/sessionless_launch'.format(self.client.CanvasExternalTools.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasExternalTools.generate_queries())
+
+        pprint(request)
+
 
