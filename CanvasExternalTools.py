@@ -17,6 +17,8 @@ class CanvasExternalTools(CanvasClient):
         self.module_item_id = None
         self.launch_type = None
 
+        self.external_tool_id = None
+
 
     def generate_queries(self):
 
@@ -50,3 +52,4 @@ class CanvasExternalTools(CanvasClient):
         self.assingment_id = None
         self.module_item_id = None
         self.launch_type = None
+        self.external_tool_id = None
