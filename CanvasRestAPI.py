@@ -3042,9 +3042,17 @@ class CanvasExternalTool(CanvasClient):
         pprint(request)
 
 
-    def get_single_external_tool(self):
+    def get_single_external_tool_course_id(self):
 
         url = self.base_url + '/api/v1/courses/{}/external_tools/{}'.format(self.client.CanvasExternalTools.course_id,self.client.CanvasExternalTools.external_tool_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_single_external_tool_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/external_tools/{}'.format(self.client.CanvasExternalTools.account_id,self.client.CanvasExternalTools.external_tool_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)})
 
