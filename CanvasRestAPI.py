@@ -3001,12 +3001,28 @@ class CanvasExternalTool(CanvasClient):
         self.base_url = 'https://{}'.format(self.install_url)
         self.client = client
 
-    def list_external_tools(self):
+    def list_external_tools_course_id(self):
 
         url = self.base_url + '/api/v1/courses/{}/external_tools'.format(self.client.CanvasExternalTools.course_id)
 
         request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasExternalTools.generate_queries())
 
         pprint(request)
+
+    def list_external_tools_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/external_tools'.format(self.client.CanvasExternalTools.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasExternalTools.generate_queries())
+
+        pprint(request)
+
+    def list_external_tools_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/external_tools'.format(self.client.CanvasExternalTools.group_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasExternalTools.generate_queries())
+
+        pprint(request
 
 
