@@ -45,3 +45,8 @@ class CanvasExternalTools(CanvasClient):
         self.search_term = None
         self.selectable = None
         self.include_parents = None
+        self.id = None
+        self.url = None
+        self.assingment_id = None
+        self.module_item_id = None
+        self.launch_type = None
