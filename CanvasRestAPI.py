@@ -3060,15 +3060,15 @@ class CanvasExternalTool(CanvasClient):
 
     def create_external_tool(self):
 
-        url = self.base_url + '/api/v1/courses/{}/external_tools'.format(self.client.CanvasExternalFeed.course_id)
+        url = self.base_url + '/api/v1/courses/{}/external_tools'.format(self.client.CanvasExternalTools.course_id)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasExternalFeed.generate_queries())
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasExternalTools.generate_queries())
 
         pprint(request)
 
     def edit_external_tool_course_id(self):
 
-        url = self.base_url + '/api/v1/courses/{}/external_tool/{}'.format(self.client.CanvasExternalFeed.course_id,self.client.CanvasExternalFeed.external_tool_id)
+        url = self.base_url + '/api/v1/courses/{}/external_tool/{}'.format(self.client.CanvasExternalTools.course_id,self.client.CanvasExternalTools.external_tool_id)
 
         request = requests.put(url,headers={'Authorization {}'.format(self.token)})
 
@@ -3076,9 +3076,17 @@ class CanvasExternalTool(CanvasClient):
 
     def edit_external_tool_account_id(self):
 
-        url = self.base_url + '/api/v1/accounts/{}/external_tools/{}'.format(self.client.CanvasExternalFeed.account_id)
+        url = self.base_url + '/api/v1/accounts/{}/external_tools/{}'.format(self.client.CanvasExternalTools.account_id)
 
         request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def delete_external_tool_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/external_tools/{}'.format(self.client.CanvasExternalTools.course_id,self.client.CanvasExternalTools.external_tool_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
 
         pprint(request)
 
