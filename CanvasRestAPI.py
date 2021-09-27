@@ -3124,3 +3124,12 @@ class CanvasExternalTool(CanvasClient):
         pprint(request)
 
 
+    def get_visible_course_navigation_tools_for_single_course(self):
+
+        url = self.base_url + '/api/v1/courses/{}/external_tools/visible_course_nav_tools'.format(self.client.CanvasExternalTools.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
