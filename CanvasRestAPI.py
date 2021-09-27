@@ -3162,6 +3162,14 @@ class CanvasFavorites(CanvasClient):
 
         pprint(request)
 
+    def add_group_to_favorites(self):
+
+        url = self.base_url + '/api/v1/users/self/favorites/groups/{}'.format(self.client.CanvasFavorite.group_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.client)},json=self.client.CanvasFavorite.generate_queries())
+
+        pprint(request)
+
 
 
 
