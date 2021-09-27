@@ -3132,4 +3132,20 @@ class CanvasExternalTool(CanvasClient):
 
         pprint(request)
 
+class CanvasFavorites(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def list_favorite_courses(self):
+
+        url = self.base_url + '/api/v1/users/self/favorites/courses'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasFavorite.generate_queries())
+
+        pprint(request)
+
+
+
 
