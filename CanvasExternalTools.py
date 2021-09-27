@@ -82,11 +82,15 @@ class CanvasExternalTools(CanvasClient):
 
         self.rce_favorite_id = None
 
+        self.context_codes = None
+
 
     def generate_queries(self):
 
         body = {}
 
+        if self.context_codes is not None:
+            body['context_codes[]'] = self.context_codes
         if self.name is not None:
             body['name'] = self.name
         if self.privacy_level is not None:
@@ -297,3 +301,4 @@ class CanvasExternalTools(CanvasClient):
         self.not_selectable = None
         self.oauth_compliant = None
         self.rce_favorite_id = None
+        self.context_codes = None
