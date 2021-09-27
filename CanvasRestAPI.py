@@ -3107,4 +3107,12 @@ class CanvasExternalTool(CanvasClient):
 
         pprint(request)
 
+    def remove_tool_from_rce_favorites(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/external_tools/rce_favorites/{}'.format(self.client.CanvasExternalTools.account_id,self.client.CanvasExternalTools.rce_favorite_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
