@@ -3146,6 +3146,14 @@ class CanvasFavorites(CanvasClient):
 
         pprint(request)
 
+    def list_favorite_groups(self):
+
+        url = self.base_url + '/api/v1/users/self/favorites/groups'
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
