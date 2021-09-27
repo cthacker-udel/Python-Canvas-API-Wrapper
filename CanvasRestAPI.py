@@ -3154,6 +3154,14 @@ class CanvasFavorites(CanvasClient):
 
         pprint(request)
 
+    def add_course_to_favorites(self):
+
+        url = self.base_url + '/api/v1/users/self/favorites/courses/{}'.format(self.client.CanvasFavorite.course_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.client)},json=self.client.CanvasFavorite.generate_queries())
+
+        pprint(request)
+
 
 
 
