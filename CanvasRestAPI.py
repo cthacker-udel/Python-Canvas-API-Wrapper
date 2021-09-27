@@ -3099,3 +3099,12 @@ class CanvasExternalTool(CanvasClient):
         pprint(request)
 
 
+    def add_tool_to_rce_favorites(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/external_tools/rce_favorites/{}'.format(self.client.CanvasExternalTools.account_id,self.client.CanvasExternalTools.rce_favorite_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+

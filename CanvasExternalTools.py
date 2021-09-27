@@ -80,6 +80,8 @@ class CanvasExternalTools(CanvasClient):
         self.not_selectable = None
         self.oauth_compliant = None
 
+        self.rce_favorite_id = None
+
 
     def generate_queries(self):
 
@@ -294,3 +296,4 @@ class CanvasExternalTools(CanvasClient):
         self.config_url = None
         self.not_selectable = None
         self.oauth_compliant = None
+        self.rce_favorite_id = None
