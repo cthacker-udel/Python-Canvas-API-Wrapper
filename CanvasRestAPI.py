@@ -3066,4 +3066,12 @@ class CanvasExternalTool(CanvasClient):
 
         pprint(request)
 
+    def edit_external_tool_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/external_tool/{}'.format(self.client.CanvasExternalFeed.course_id,self.client.CanvasExternalFeed.external_tool_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
