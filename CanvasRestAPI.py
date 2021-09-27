@@ -3090,4 +3090,12 @@ class CanvasExternalTool(CanvasClient):
 
         pprint(request)
 
+    def delete_external_tool_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/external_tools/{}'.format(self.client.CanvasExternalTools.account_id,self.client.CanvasExternalTools.external_tool_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
