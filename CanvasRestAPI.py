@@ -3170,6 +3170,22 @@ class CanvasFavorites(CanvasClient):
 
         pprint(request)
 
+    def remove_course_from_favorites(self):
+
+        url = self.base_url + '/api/v1/users/self/favorites/course/{}'.format(self.client.CanvasFavorite.course_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasFavorite.generate_queries(()))
+
+        pprint(request)
+
+    def remove_group_from_favorites(self):
+
+        url = self.base_url + '/api/v1/users/self/favorites/groups/{}'.format(self.client.CanvasFavorite.group_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},json=self.client.CanvasFavorite.generate_queries())
+
+        pprint(request)
+
 
 
 
