@@ -3249,6 +3249,14 @@ class CanvasFeatureFlag(CanvasClient):
 
         pprint(request)
 
+    def list_enabled_features_user_id(self):
+
+        url = self.base_url + '/api/v1/users/{}/features/enabled'.format(self.client.CanvasFeatureFlags.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
