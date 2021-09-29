@@ -3265,6 +3265,22 @@ class CanvasFeatureFlag(CanvasClient):
 
         pprint(request)
 
+    def get_feature_flag_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/features/flags/{}'.format(self.client.CanvasFeatureFlags.course_id,self.client.CanvasFeatureFlags.feature_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_feature_flag_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/features/flags/{}'.format(self.client.CanvasFeatureFlags.account_id,self.client.CanvasFeatureFlags.feature_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
