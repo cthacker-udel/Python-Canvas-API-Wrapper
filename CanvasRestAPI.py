@@ -3194,6 +3194,14 @@ class CanvasFavorites(CanvasClient):
 
         pprint(request)
 
+    def reset_group_favorites(self):
+
+        url = self.base_url + '/api/v1/users/self/favorites/groups'
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
