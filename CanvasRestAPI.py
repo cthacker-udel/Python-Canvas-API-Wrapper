@@ -3217,6 +3217,14 @@ class CanvasFeatureFlag(CanvasClient):
 
         pprint(request)
 
+    def list_features_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/features'.format(self.client.CanvasFeatureFlags.account_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
