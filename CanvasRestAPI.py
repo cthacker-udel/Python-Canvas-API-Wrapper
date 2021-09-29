@@ -3203,5 +3203,20 @@ class CanvasFavorites(CanvasClient):
         pprint(request)
 
 
+class CanvasFeatureFlag(CanvasClient):
+
+    def __init__(self,client):
+        self.client = client
+        self.base_url = 'https://{}'.format(self.install_url)
+
+    def list_features_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/features'.format(self.client.CanvasFeatureFlags.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+
 
 
