@@ -3351,6 +3351,14 @@ class CanvasFiles(CanvasClient):
 
         pprint(request)
 
+    def get_quota_information_user_id(self):
+
+        url = self.base_url + '/api/v1/users/{}/files/quota'.format(self.client.CanvasFile.user_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
