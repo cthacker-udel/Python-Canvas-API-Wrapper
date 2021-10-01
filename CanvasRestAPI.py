@@ -3305,6 +3305,14 @@ class CanvasFeatureFlag(CanvasClient):
 
         pprint(request)
 
+    def remove_feature_flag_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/features/flags/{}'.format(self.client.CanvasFeatureFlags.course_id,self.client.CanvasFeatureFlags.feature_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
