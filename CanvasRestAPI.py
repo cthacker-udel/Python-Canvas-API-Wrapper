@@ -3313,6 +3313,22 @@ class CanvasFeatureFlag(CanvasClient):
 
         pprint(request)
 
+    def remove_feature_flag_account_id(self):
+
+        url = self.base_url + '/api/v1/accounts/{}/features/flags/{}'.format(self.client.CanvasFeatureFlags.account_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def remove_feature_flag_user_id(self):
+
+        url = self.base_url + '/api/v1/users/{}/features/flags/{}'.format(self.client.CanvasFeatureFlags.user_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
