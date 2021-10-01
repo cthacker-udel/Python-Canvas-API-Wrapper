@@ -3329,6 +3329,20 @@ class CanvasFeatureFlag(CanvasClient):
 
         pprint(request)
 
+class CanvasFiles(CanvasClient):
+
+    def __init__(self,client):
+        self.base_url = 'https://{}'.format(self.install_url)
+        self.client = client
+
+    def get_quota_information_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/files/quota'.format(self.client.CanvasFile.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
