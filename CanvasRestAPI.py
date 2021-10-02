@@ -3375,6 +3375,14 @@ class CanvasFiles(CanvasClient):
 
         pprint(request)
 
+    def list_files_group_id(self):
+
+        url = self.base_url + '/api/v1/groups/{}/files'.format(self.client.CanvasFile.group_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasFile.generate_queries())
+
+        pprint(request)
+
 
 
 
