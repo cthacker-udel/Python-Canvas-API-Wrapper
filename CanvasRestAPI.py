@@ -3403,7 +3403,7 @@ class CanvasFiles(CanvasClient):
 
         url = self.base_url + '/api/v1/files/{}'.format(self.client.CanvasFile.file_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasFile.generate_queries())
 
         pprint(request)
 
@@ -3411,7 +3411,7 @@ class CanvasFiles(CanvasClient):
 
         url = self.base_url + '/api/v1/files/{}'.format(self.client.CanvasFile.file_id)
 
-        request = requests.post(url,headers={'Authorization {}'.format(self.token)})
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasFile.generate_queries())
 
         pprint(request)
 
@@ -3419,7 +3419,7 @@ class CanvasFiles(CanvasClient):
 
         url = self.base_url + '/api/v1/courses/{}/files/{}'.format(self.client.CanvasFile.course_id,self.client.CanvasFile.file_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasFile.generate_queries())
 
         pprint(request)
 
@@ -3427,9 +3427,19 @@ class CanvasFiles(CanvasClient):
 
         url = self.base_url + '/api/v1/groups/{}/files/{}'.format(self.client.CanvasFile.group_id,self.client.CanvasFile.file_id)
 
-        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasFile.generate_queries())
 
         pprint(request)
+
+    def get_file_user_id(self):
+
+        url = self.base_url + '/api/v1/users/{}/files/{}'.format(self.client.CanvasFile.user_id,self.client.CanvasFile.file_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasFile.generate_queries())
+
+        pprint(request)
+
+
 
 
 
