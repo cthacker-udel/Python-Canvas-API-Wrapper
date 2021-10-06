@@ -3391,6 +3391,14 @@ class CanvasFiles(CanvasClient):
 
         pprint(request)
 
+    def get_public_inline_preview_url(self):
+
+        url = self.base_url + '/api/v1/files/{}/public_url'.format(self.client.CanvasFile.file_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasFile.generate_queries())
+
+        pprint(request)
+
 
 
 
