@@ -3399,6 +3399,22 @@ class CanvasFiles(CanvasClient):
 
         pprint(request)
 
+    def get_file_file_id(self):
+
+        url = self.base_url + '/api/v1/files/{}'.format(self.client.CanvasFile.file_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
+    def get_file_file_id_post(self):
+
+        url = self.base_url + '/api/v1/files/{}'.format(self.client.CanvasFile.file_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
