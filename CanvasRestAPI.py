@@ -3472,6 +3472,14 @@ class CanvasFiles(CanvasClient):
 
         pprint(request)
 
+    def list_all_folders_course_id(self):
+
+        url = self.base_url + '/api/v1/courses/{}/folders'.format(self.client.CanvasFile.course_id)
+
+        request = requests.get(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
