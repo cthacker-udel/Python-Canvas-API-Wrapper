@@ -3448,6 +3448,14 @@ class CanvasFiles(CanvasClient):
 
         pprint(request)
 
+    def delete_file(self):
+
+        url = self.base_url + '/api/v1/files/{}'.format(self.client.CanvasFile.file_id)
+
+        request = requests.delete(url,headers={'Authorization {}'.format(self.token)},body=self.client.CanvasFile.generate_queries())
+
+        pprint(request)
+
 
 
 
