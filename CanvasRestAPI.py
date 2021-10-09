@@ -3440,6 +3440,15 @@ class CanvasFiles(CanvasClient):
         pprint(request)
 
 
+    def update_file(self):
+
+        url = self.base_url + '/api/v1/files/{}'.format(self.client.CanvasFile.file_id)
+
+        request = requests.put(url,headers={'Authorization {}'.format(self.token)},params=self.client.CanvasFile.generate_queries())
+
+        pprint(request)
+
+
 
 
 
