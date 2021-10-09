@@ -3456,6 +3456,14 @@ class CanvasFiles(CanvasClient):
 
         pprint(request)
 
+    def reset_link_verifier(self):
+
+        url = self.base_url + '/api/v1/files/{}/reset_verifier/'.format(self.client.CanvasFile.file_id)
+
+        request = requests.post(url,headers={'Authorization {}'.format(self.token)})
+
+        pprint(request)
+
 
 
 
